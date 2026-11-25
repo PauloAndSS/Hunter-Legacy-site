@@ -1,10 +1,28 @@
 import React, { useState } from 'react';
 import { Avatar, Meter, Modal } from './UI';
 import Background, { entriesOf } from './Background';
-import { applyAuto, grants, prepareEdit } from '../auto';
+import Lineage, { missingLineage } from './Lineage';
+import { FIELDS, applyAuto, derived, grants, prepareEdit } from '../auto';
 import { attrs, catalogs, skills, normalize, mod, prof, signed, skillBonus } from '../rules';
 
+const CURRENT = { pv: 'PV', pve: 'Vitalidade', pa: 'Aura' };
 const KINDS = { action: 'Normal', power: 'Poder', bonus: 'Bônus', reaction: 'Reação' };
+// Ao trocar uma escolha, as opções dela recomeçam e o automático é ligado.
+const RESET = {
+  species: (v) => ({
+    autoSpecies: !!v,
+    speciesAttrs: ['', ''],
+    speciesVariant: '',
+    speciesTraits: [],
+  }),
+  nen: (v) => ({ autoNen: !!v, nenSaves: [], nenPath: '', nenMain: '' }),
+  origin: (v) => ({ autoOrigin: !!v, originSkills: [] }),
+  hunter: (v) => ({ autoHunter: !!v, hunterSkills: [] }),
+};
+const FIELDS_OF = {
+  species: ['pveMax', 'speed'],
+  nen: ['pvMax', 'paMax', 'cr', 'attackBonus'],
+};
 // Limites conferidos ao salvar, porque nem todas as abas ficam na tela.
 const LIMITS = {
   level: ['Nível', 1, 30],
@@ -64,36 +82,103 @@ export default function Sheet({
     [kind, K] = useState('action'),
     [share, S] = useState(''),
     [baseRevision, BR] = useState(character.revision),
+    [touched, TC] = useState({}),
     [err, ER] = useState('');
   // Na edição, `draft.base` é o que se digita e `s` já traz os benefícios automáticos somados.
   const s = editing ? applyAuto(draft, entriesOf(draft)) : normalize(character.sheet);
-  const auto = grants(s, entriesOf(s));
-  const set = (key, value) => D((old) => ({ ...old, [key]: value }));
+  const entries = entriesOf(s);
+  const auto = grants(s, entries);
+  const fields = derived(s, entries);
+  const available = derived({ ...s, manual: {} }, entries);
+  const set = (key, value) =>
+    D((old) => ({ ...old, ...(typeof key === 'object' ? key : { [key]: value }) }));
+  // PV, vitalidade e aura: sem edição manual, quem estava no máximo acompanha o novo máximo.
+  const current = (k) => {
+    if (!editing || touched[k]) return draft[k];
+    const initial = normalize(character.sheet);
+    return initial[k] >= initial[k + 'Max'] ? s[k + 'Max'] : Math.min(draft[k], s[k + 'Max']);
+  };
   const setBase = (group, key, value) =>
     D((old) => ({
       ...old,
       base: { ...old.base, [group]: { ...old.base[group], [key]: value } },
     }));
   const choose = (key, value) =>
-    D((old) =>
-      key === 'origin'
-        ? { ...old, origin: value, autoOrigin: !!value, originSkills: [] }
-        : { ...old, hunter: value, autoHunter: !!value, hunterSkills: [] },
-    );
+    D((old) => ({
+      ...old,
+      [key]: value,
+      ...RESET[key](value),
+      manual: Object.fromEntries(
+        Object.entries(old.manual || {}).filter(([k]) => !FIELDS_OF[key]?.includes(k)),
+      ),
+    }));
+  const setManual = (key, on) =>
+    D((old) => ({
+      ...old,
+      manual: { ...old.manual, [key]: on },
+      base: { ...old.base, ...(on && { [key]: s[key] }) },
+    }));
   const setTechnique = (i, patch) =>
     set(
       'techniques',
       draft.techniques.map((v, j) => (j === i ? { ...v, ...patch } : v)),
     );
-  const num = (key) => (
-    <Num
-      label={LIMITS[key][0]}
-      min={LIMITS[key][1]}
-      max={LIMITS[key][2]}
-      value={draft[key]}
-      onChange={(v) => set(key, v)}
-    />
-  );
+  const num = (key) => {
+    const [label, min, max] = LIMITS[key];
+    if (key in fields)
+      return (
+        <span className="auto-field">
+          <b>{fields[key]}</b>
+          <button
+            type="button"
+            className="auto-tag"
+            title="Calculado pelas regras. Clique para digitar."
+            aria-label={label + ': passar para manual'}
+            onClick={() => setManual(key, true)}
+          >
+            auto
+          </button>
+        </span>
+      );
+    const input = FIELDS.includes(key) ? (
+      <Num
+        label={label}
+        min={min}
+        max={max}
+        value={draft.base[key]}
+        onChange={(v) => D((old) => ({ ...old, base: { ...old.base, [key]: v } }))}
+      />
+    ) : key in CURRENT ? (
+      <Num
+        label={label}
+        min={min}
+        max={max}
+        value={current(key)}
+        onChange={(v) => {
+          TC((old) => ({ ...old, [key]: true }));
+          set(key, v);
+        }}
+      />
+    ) : (
+      <Num label={label} min={min} max={max} value={draft[key]} onChange={(v) => set(key, v)} />
+    );
+    return key in available ? (
+      <span className="auto-field">
+        {input}
+        <button
+          type="button"
+          className="auto-tag manual"
+          title="Voltar ao valor calculado pelas regras."
+          aria-label={label + ': voltar ao automático'}
+          onClick={() => setManual(key, false)}
+        >
+          manual
+        </button>
+      </span>
+    ) : (
+      input
+    );
+  };
   const permitted = (k) =>
     editing || (canRoll && !busy && (!combatActive || allowedKinds.includes(k)));
   const roll = (mode, key) =>
@@ -112,21 +197,23 @@ export default function Sheet({
         if (!Number.isInteger(value) || value < min || value > max)
           throw Error(`${label}: use um número de ${min} a ${max}.`);
       };
-      for (const [k, [label, min, max]] of Object.entries(LIMITS)) check(label, draft[k], min, max);
+      const total = {
+        ...applyAuto(draft, entriesOf(draft)),
+        pv: current('pv'),
+        pve: current('pve'),
+        pa: current('pa'),
+      };
+      for (const [k, [label, min, max]] of Object.entries(LIMITS)) check(label, total[k], min, max);
       if (draft.level > 20) check('Proficiência épica', draft.proficiency ?? 6, 0, 20);
       for (const a of attrs) check(a, draft.base.attributes[a], 1, 30);
       for (const t of draft.techniques) {
         if (!t.name.trim()) throw Error('Dê um nome a cada técnica.');
         check(`Bônus de ${t.name}`, t.bonus, -100, 100);
       }
-      for (const [k, label] of [
-        ['pv', 'PV'],
-        ['pve', 'Vitalidade'],
-        ['pa', 'Aura'],
-      ])
-        if (draft[k] > draft[k + 'Max'])
+      for (const [k, label] of Object.entries(CURRENT))
+        if (total[k] > total[k + 'Max'])
           throw Error(`${label}: o valor atual não pode exceder o máximo.`);
-      await onSave(applyAuto(draft, entriesOf(draft)), character, baseRevision);
+      await onSave(total, character, baseRevision);
       E(false);
     } catch (e) {
       ER(e.message);
@@ -144,7 +231,7 @@ export default function Sheet({
         <div className="meter-track">
           <i
             style={{
-              width: Math.min(100, (100 * (draft[key] || 0)) / (draft[key + 'Max'] || 1)) + '%',
+              width: Math.min(100, (100 * (current(key) || 0)) / (s[key + 'Max'] || 1)) + '%',
               background: color || '#477e57',
             }}
           />
@@ -153,23 +240,16 @@ export default function Sheet({
     ) : (
       <Meter label={label} value={value} max={max} color={color} />
     );
-  const { origin, hunter } = entriesOf(s);
+  const { species, nen, origin, hunter } = entries;
+  const missingTop = missingLineage(s);
   const missing =
     (s.autoOrigin && origin ? origin.skillCount - (s.originSkills?.length || 0) : 0) +
     (s.autoHunter && hunter?.skillCount ? hunter.skillCount - (s.hunterSkills?.length || 0) : 0);
-  const identity = (label, key, cat, entry) => (
+  const identity = (label, key, cat, entry, target) => (
     <div className="identity-field">
       <small>{label}</small>
       {editing ? (
-        <select
-          aria-label={label}
-          value={draft[key]}
-          onChange={(e) =>
-            key === 'origin' || key === 'hunter'
-              ? choose(key, e.target.value)
-              : set(key, e.target.value)
-          }
-        >
+        <select aria-label={label} value={draft[key]} onChange={(e) => choose(key, e.target.value)}>
           <option value="">Selecione</option>
           {(catalogs[cat] || []).map((v) => (
             <option key={v.id}>{v.name}</option>
@@ -181,7 +261,7 @@ export default function Sheet({
       {entry && (
         <>
           <p>{entry.summary}</p>
-          <button type="button" className="link" onClick={() => T('Origem e classe')}>
+          <button type="button" className="link" onClick={() => T(target)}>
             Ver o que faz →
           </button>
         </>
@@ -238,6 +318,7 @@ export default function Sheet({
                 ER('');
                 BR(character.revision);
                 D(start());
+                TC({});
                 E(true);
               }}
             >
@@ -263,6 +344,14 @@ export default function Sheet({
               : 'Aguarde seu turno ou uma reação autorizada pelo mestre.'}
           </p>
         )}
+        {editing && missingTop > 0 && (
+          <p className="sheet-hint">
+            Faltam {missingTop} escolha(s) de espécie ou categoria.{' '}
+            <button type="button" className="link" onClick={() => T('Espécie e Nen')}>
+              Escolher →
+            </button>
+          </p>
+        )}
         {editing && missing > 0 && (
           <p className="sheet-hint">
             Faltam {missing} perícia(s) de origem ou classe para escolher.{' '}
@@ -286,7 +375,7 @@ export default function Sheet({
                 />
                 {auto.attributes[a] && (
                   <em title={'Bônus de ' + auto.attributes[a].from}>
-                    +{s.attributes[a] - draft.base.attributes[a]} origem = {s.attributes[a]}
+                    +{s.attributes[a] - (draft.base.attributes[a] || 0)} = {s.attributes[a]}
                   </em>
                 )}
               </div>
@@ -305,7 +394,7 @@ export default function Sheet({
           )}
         </div>
         <nav className="sheet-tabs" aria-label="Seções da ficha">
-          {['Resumo', 'Origem e classe', 'Técnicas', 'Anotações'].map((t) => (
+          {['Resumo', 'Espécie e Nen', 'Origem e classe', 'Técnicas', 'Anotações'].map((t) => (
             <button
               type="button"
               key={t}
@@ -433,10 +522,10 @@ export default function Sheet({
                   </button>
                 ))}
               </div>
-              {identity('Espécie', 'species', 'especies')}
-              {identity('Categoria de Nen', 'nen', 'categorias_nen')}
-              {identity('Classe Hunter', 'hunter', 'classes_hunter', hunter)}
-              {identity('Origem', 'origin', 'origens', origin)}
+              {identity('Espécie', 'species', 'especies', species, 'Espécie e Nen')}
+              {identity('Categoria de Nen', 'nen', 'categorias_nen', nen, 'Espécie e Nen')}
+              {identity('Classe Hunter', 'hunter', 'classes_hunter', hunter, 'Origem e classe')}
+              {identity('Origem', 'origin', 'origens', origin, 'Origem e classe')}
               {character.campaign_id && (isOwner || canEdit) && !editing && (
                 <p className="muted">
                   Ficha da campanha: o dono e o mestre podem editar. PV e condições do combate ficam
@@ -502,6 +591,9 @@ export default function Sheet({
               )}
             </section>
           </div>
+        )}
+        {tab === 'Espécie e Nen' && (
+          <Lineage sheet={s} editing={editing} set={set} choose={choose} />
         )}
         {tab === 'Origem e classe' && (
           <Background sheet={s} editing={editing} set={set} choose={choose} />

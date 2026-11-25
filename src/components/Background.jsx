@@ -2,34 +2,40 @@ import React from 'react';
 import { catalogs, skills } from '../rules';
 import { grants } from '../auto';
 
+const find = (list, name) => list.find((e) => e.name === name);
 export const entriesOf = (s) => ({
-  origin: catalogs.origens.find((e) => e.name === s.origin),
-  hunter: catalogs.classes_hunter.find((e) => e.name === s.hunter),
+  species: find(catalogs.especies, s.species),
+  nen: find(catalogs.categorias_nen, s.nen),
+  origin: find(catalogs.origens, s.origin),
+  hunter: find(catalogs.classes_hunter, s.hunter),
+  traits: catalogs.tracos_quimera,
 });
-const skillName = (id) => skills.find((k) => k.id === id)?.name || id;
+export const skillName = (id) => skills.find((k) => k.id === id)?.name || id;
 const RANKS = ['single', 'double', 'triple'];
 const LEVELS = { 1: 'proficiência', 2: 'maestria' };
+export const grantText = (source) =>
+  Object.entries(source?.skillGrants || {}).map(([id, l]) => `${skillName(id)} (${LEVELS[l]})`);
 
-function Picker({ entry, chosen = [], taken, onChange }) {
-  const missing = entry.skillCount - chosen.length;
+// Lista de marcação com limite. `options`: [{ id, label, title }].
+export function Picker({ title, count, options, chosen = [], taken, onChange }) {
+  const missing = count - chosen.length;
   return (
     <fieldset className="skill-picker">
       <legend>
-        Escolha {entry.skillCount} perícias{' '}
-        <b>{missing > 0 ? `· faltam ${missing}` : '· completo'}</b>
+        {title} <b>{missing > 0 ? `· faltam ${missing}` : '· completo'}</b>
       </legend>
-      {entry.skills.map((id) => {
+      {options.map(({ id, label, title: hint }) => {
         const on = chosen.includes(id);
         return (
-          <label key={id} className={on ? 'on' : ''}>
+          <label key={id} className={on ? 'on' : ''} title={hint}>
             <input
               type="checkbox"
               checked={on}
               disabled={!on && missing <= 0}
               onChange={() => onChange(on ? chosen.filter((v) => v !== id) : [...chosen, id])}
             />
-            {skillName(id)}
-            {taken.has(id) && <small> (já concedida)</small>}
+            {label}
+            {taken?.has(id) && <small> (já concedida)</small>}
           </label>
         );
       })}
@@ -37,20 +43,7 @@ function Picker({ entry, chosen = [], taken, onChange }) {
   );
 }
 
-function Benefits({ entry, sheet, kind }) {
-  const auto = kind === 'origin' ? sheet.autoOrigin : sheet.autoHunter;
-  const chosen = kind === 'origin' ? sheet.originSkills : sheet.hunterSkills;
-  const list = [];
-  if (entry.attribute) list.push(`${entry.attribute} +${entry.attributeBonus} (até 20)`);
-  if (entry.save) list.push(`Salvaguarda de ${entry.save}`);
-  for (const [id, level] of Object.entries(entry.skillGrants || {}))
-    list.push(`${skillName(id)} (${LEVELS[level]})`);
-  if (entry.skillCount)
-    list.push(
-      chosen?.length
-        ? `Perícias: ${chosen.map(skillName).join(', ')}`
-        : `${entry.skillCount} perícias à escolha`,
-    );
+export function Benefits({ auto, list }) {
   if (!list.length) return null;
   return (
     <div className="benefits">
@@ -64,11 +57,14 @@ function Benefits({ entry, sheet, kind }) {
   );
 }
 
-function Feature({ feature, rank, locked }) {
+export function Feature({ feature, rank, locked }) {
   const reached = RANKS.indexOf(rank);
   return (
     <article className={'feature' + (locked ? ' locked' : '')}>
-      <h4>{feature.name}</h4>
+      <h4>
+        {feature.name}
+        {feature.level && <span className="level-tag">nível {feature.level}</span>}
+      </h4>
       <p>{feature.text}</p>
       {feature.evolution && (
         <ul>
@@ -83,53 +79,88 @@ function Feature({ feature, rank, locked }) {
   );
 }
 
-// Origem e classe Hunter: descrição completa e, na edição, as escolhas.
-export default function Background({ sheet, editing, set, choose }) {
-  const { origin, hunter } = entriesOf(sheet);
-  const rank = sheet.hunterRank || 'amador';
-  const license = catalogs.licencas_hunter.find((l) => l.id === rank);
-  const isPro = rank !== 'amador';
-  // Perícias que vêm da outra fonte: o livro manda escolher uma diferente.
-  const from = (o, h) =>
-    new Set(
-      Object.keys(
-        grants(
-          { ...sheet, autoOrigin: o && sheet.autoOrigin, autoHunter: h && sheet.autoHunter },
-          { origin, hunter },
-        ).skills,
-      ),
-    );
-  const select = (key, list) => (
-    <select value={sheet[key]} onChange={(e) => choose(key, e.target.value)} aria-label={key}>
+export function AutoToggle({ checked, onChange, children }) {
+  return (
+    <label className="inline auto-toggle">
+      <input type="checkbox" checked={!!checked} onChange={(e) => onChange(e.target.checked)} />
+      {children}
+    </label>
+  );
+}
+
+export function EntrySelect({ label, value, list, onChange }) {
+  return (
+    <select aria-label={label} value={value} onChange={(e) => onChange(e.target.value)}>
       <option value="">Selecione</option>
       {list.map((v) => (
-        <option key={v.id}>{v.name}</option>
+        <option key={v.id || v.name}>{v.name}</option>
       ))}
     </select>
   );
-  const auto = (key, text) => (
-    <label className="inline auto-toggle">
-      <input type="checkbox" checked={!!sheet[key]} onChange={(e) => set(key, e.target.checked)} />
-      {text}
-    </label>
-  );
+}
+
+export const Source = ({ entry }) => (
+  <small className="muted">
+    {entry.source}, p. {entry.page}
+  </small>
+);
+
+const skillOptions = (entry) => entry.skills.map((id) => ({ id, label: skillName(id) }));
+
+// Origem e classe Hunter: descrição completa e, na edição, as escolhas.
+export default function Background({ sheet, editing, set, choose }) {
+  const entries = entriesOf(sheet);
+  const { origin, hunter } = entries;
+  const rank = sheet.hunterRank || 'amador';
+  const license = catalogs.licencas_hunter.find((l) => l.id === rank);
+  const isPro = rank !== 'amador';
+  // Perícias que já vêm de outra fonte: o livro manda escolher uma diferente.
+  const taken = (own) => new Set(Object.keys(grants(sheet, entries, own).skills));
+  const chosenText = (entry, chosen) =>
+    entry.skillCount
+      ? [
+          chosen?.length
+            ? `Perícias: ${chosen.map(skillName).join(', ')}`
+            : `${entry.skillCount} perícias à escolha`,
+        ]
+      : [];
   return (
     <div className="background-tab">
       <section>
         <small>ORIGEM</small>
-        {editing ? select('origin', catalogs.origens) : <h3>{sheet.origin || 'Não definida'}</h3>}
+        {editing ? (
+          <EntrySelect
+            label="Origem (aba)"
+            value={sheet.origin}
+            list={catalogs.origens}
+            onChange={(v) => choose('origin', v)}
+          />
+        ) : (
+          <h3>{sheet.origin || 'Não definida'}</h3>
+        )}
         {origin && (
           <>
             <p>{origin.summary}</p>
-            <Benefits entry={origin} sheet={sheet} kind="origin" />
+            <Benefits
+              auto={sheet.autoOrigin}
+              list={[
+                `${origin.attribute} +${origin.attributeBonus} (até 20)`,
+                `Salvaguarda de ${origin.save}`,
+                ...chosenText(origin, sheet.originSkills),
+              ]}
+            />
             {editing && (
               <>
-                {auto('autoOrigin', 'Aplicar atributo, salvaguarda e perícias')}
+                <AutoToggle checked={sheet.autoOrigin} onChange={(v) => set('autoOrigin', v)}>
+                  Aplicar atributo, salvaguarda e perícias
+                </AutoToggle>
                 {sheet.autoOrigin && (
                   <Picker
-                    entry={origin}
+                    title={`Escolha ${origin.skillCount} perícias`}
+                    count={origin.skillCount}
+                    options={skillOptions(origin)}
                     chosen={sheet.originSkills}
-                    taken={from(false, true)}
+                    taken={taken('origin')}
                     onChange={(v) => set('originSkills', v)}
                   />
                 )}
@@ -141,23 +172,26 @@ export default function Background({ sheet, editing, set, choose }) {
             {origin.features.map((f) => (
               <Feature key={f.name} feature={f} />
             ))}
-            <small className="muted">
-              {origin.source}, p. {origin.page}
-            </small>
+            <Source entry={origin} />
           </>
         )}
       </section>
       <section>
         <small>CLASSE HUNTER</small>
         {editing ? (
-          select('hunter', catalogs.classes_hunter)
+          <EntrySelect
+            label="Classe Hunter (aba)"
+            value={sheet.hunter}
+            list={catalogs.classes_hunter}
+            onChange={(v) => choose('hunter', v)}
+          />
         ) : (
           <h3>{sheet.hunter || 'Não definida'}</h3>
         )}
         {hunter && (
           <>
             <p>{hunter.summary}</p>
-            {editing ? (
+            {editing && (
               <label>
                 Licença
                 <select value={rank} onChange={(e) => set('hunterRank', e.target.value)}>
@@ -168,22 +202,29 @@ export default function Background({ sheet, editing, set, choose }) {
                   ))}
                 </select>
               </label>
-            ) : null}
+            )}
             <p className="license">
               <b>{license?.name}.</b>{' '}
               {hunter.noLicenseBenefits
                 ? 'Sem classe, a licença libera apenas o acesso a informações.'
                 : license?.summary}
             </p>
-            <Benefits entry={hunter} sheet={sheet} kind="hunter" />
+            <Benefits
+              auto={sheet.autoHunter}
+              list={[...grantText(hunter), ...chosenText(hunter, sheet.hunterSkills)]}
+            />
             {editing && (
               <>
-                {auto('autoHunter', 'Aplicar perícias da classe')}
+                <AutoToggle checked={sheet.autoHunter} onChange={(v) => set('autoHunter', v)}>
+                  Aplicar perícias da classe
+                </AutoToggle>
                 {sheet.autoHunter && hunter.skillCount && (
                   <Picker
-                    entry={hunter}
+                    title={`Escolha ${hunter.skillCount} perícias`}
+                    count={hunter.skillCount}
+                    options={skillOptions(hunter)}
                     chosen={sheet.hunterSkills}
-                    taken={from(true, false)}
+                    taken={taken('hunter')}
                     onChange={(v) => set('hunterSkills', v)}
                   />
                 )}
@@ -217,9 +258,7 @@ export default function Background({ sheet, editing, set, choose }) {
                 locked={!isPro && !hunter.noLicenseBenefits}
               />
             ))}
-            <small className="muted">
-              {hunter.source}, p. {hunter.page}
-            </small>
+            <Source entry={hunter} />
           </>
         )}
       </section>

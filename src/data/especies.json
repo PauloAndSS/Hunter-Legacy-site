@@ -6,25 +6,169 @@
       "id": "formiga-quimera",
       "name": "Formiga Quimera",
       "source": "Livro do Jogador",
-      "page": "17–25",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 16,
+      "status": "revisado",
+      "automation": "automatico",
+      "basePve": 6,
+      "speed": 9,
+      "swim": 1.5,
+      "size": "Pequeno a grande (0,50 a 6 m)",
+      "summary": "Mistura de formiga, humano e animais, com traços herdados do que foi consumido.",
+      "hasTraits": true,
+      "features": [
+        {
+          "name": "Fagogênese",
+          "text": "Recebe traços animais comuns e específicos, na quantidade da variante. A combinação depende do narrador."
+        },
+        {
+          "name": "Talento Herdado",
+          "text": "Recebe 1 talento."
+        },
+        {
+          "name": "Talento de Espécie",
+          "text": "Recebe um talento de espécie (capítulo 6).",
+          "level": 3
+        },
+        {
+          "name": "Memória Genética (dificuldade)",
+          "text": "Uma vez por dia, o narrador pode pedir salvaguarda de Espírito CD 18; na falha, −1 em testes de atributo até o fim do dia."
+        }
+      ],
+      "variants": [
+        {
+          "name": "Bestial",
+          "summary": "Aparência totalmente animal. Preconceito severo.",
+          "text": "2 traços comuns e 4 específicos.",
+          "common": 2,
+          "specific": 4
+        },
+        {
+          "name": "Híbrido",
+          "summary": "Rosto mais humano e corpo misto. Preconceito médio.",
+          "text": "2 traços comuns, 1 específico e 1 talento simples.",
+          "common": 2,
+          "specific": 1
+        },
+        {
+          "name": "Humano",
+          "summary": "Quase humano, com detalhes de um animal. Preconceito débil.",
+          "text": "1 traço comum, 1 específico e 1 talento adicional.",
+          "common": 1,
+          "specific": 1
+        }
+      ]
     },
     {
       "id": "humano",
       "name": "Humano",
       "source": "Livro do Jogador",
-      "page": "17–25",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 20,
+      "status": "revisado",
+      "automation": "automatico",
+      "basePve": 3,
+      "speed": 9,
+      "swim": 4.5,
+      "size": "Médio (1,50 a 3 m)",
+      "summary": "A espécie mais comum do mundo, diversa e adaptável.",
+      "features": [
+        {
+          "name": "Adaptação",
+          "text": "Recebe 1 talento."
+        },
+        {
+          "name": "Talento de Espécie",
+          "text": "Recebe um talento de espécie (capítulo 6).",
+          "level": 3
+        }
+      ],
+      "variants": [
+        {
+          "name": "Humano Normal",
+          "summary": "Imprevisível e adaptável.",
+          "text": "2 talentos adicionais."
+        },
+        {
+          "name": "Zoldyck",
+          "summary": "Família de assassinos; recomendada a partir do nível 6. Defeitos Instinto de Assassino e Amor Obsessivo.",
+          "text": "Talentos Resistência a Venenos e Instintos Bestiais."
+        },
+        {
+          "name": "Escória da Cidade Meteoro",
+          "summary": "Sem registro no mundo. Preconceito leve, defeito Lixo da Sociedade e menos acesso a informações até Double Hunter.",
+          "text": "Maestria em Sobrevivência e 2 talentos adicionais.",
+          "skillGrants": {
+            "sobrevivencia": 2
+          }
+        },
+        {
+          "name": "Tribo Gyudondond",
+          "summary": "Guerreiros dançantes que fazem som com o corpo. Preconceito mediano e um defeito à escolha do narrador.",
+          "text": "Proficiência em Sobrevivência, Sobrenatural e salvaguarda de Constituição, mais 2 talentos.",
+          "skillGrants": {
+            "sobrevivencia": 1,
+            "sobrenatural": 1
+          },
+          "saves": ["Constituição"]
+        },
+        {
+          "name": "Tribo Kurta",
+          "summary": "Olhos que ficam escarlates com emoções fortes. Defeito Existência Valiosa.",
+          "text": "2 talentos adicionais."
+        }
+      ]
     },
     {
       "id": "kiriko",
       "name": "Kiriko",
       "source": "Livro do Jogador",
-      "page": "17–25",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 22,
+      "status": "revisado",
+      "automation": "automatico",
+      "basePve": 4,
+      "speed": 12,
+      "swim": 4.5,
+      "size": "Médio (1,90 a 3 m)",
+      "summary": "Besta mágica inteligente e brincalhona, capaz de mudar de forma.",
+      "features": [
+        {
+          "name": "Adaptação",
+          "text": "Recebe 1 talento."
+        },
+        {
+          "name": "Talento de Espécie",
+          "text": "Recebe um talento de espécie (capítulo 6).",
+          "level": 3
+        },
+        {
+          "name": "Concentração Dividida (dificuldade)",
+          "text": "Transformado em algo fora da variante, não soma proficiência em nenhuma rolagem."
+        },
+        {
+          "name": "Bloqueio de Metamorfose (dificuldade)",
+          "text": "Sofrer dano durante uma transformação fora da variante desfaz a forma e a bloqueia por 1 hora."
+        },
+        {
+          "name": "Preconceito",
+          "text": "Na forma original, recebe preconceito médio."
+        }
+      ],
+      "variants": [
+        {
+          "name": "Humanos",
+          "summary": "Vive transformado em humano. Exige o talento Transformação.",
+          "text": "6 formas humanas, que não copiem ninguém; troca uma por descanso longo."
+        },
+        {
+          "name": "Bestas Mágicas",
+          "summary": "Vive transformado em outra besta mágica. Exige o talento Transformação.",
+          "text": "Após 1 hora de análise por toque, assume a forma e as características dela. Memória de 3 espécies."
+        },
+        {
+          "name": "Monstros",
+          "summary": "Assume corpos exóticos e poderosos. Exige o talento Transformação.",
+          "text": "Após 1 hora de análise, assume a forma da criatura, com até 1 categoria de tamanho de diferença. Memória de 5 espécies."
+        }
+      ]
     }
   ]
 }

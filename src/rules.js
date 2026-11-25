@@ -1,3 +1,5 @@
+import { mod, prof } from './math.js';
+export { mod, prof };
 export const catalogs = Object.fromEntries(
   Object.entries(import.meta.glob('./data/*.json', { eager: true, import: 'default' })).map(
     ([k, v]) => [k.split('/').pop().replace('.json', ''), v.entries || []],
@@ -57,9 +59,6 @@ export const normalize = (s) => ({
   saves: s?.saves || {},
   techniques: s?.techniques || [],
 });
-export const mod = (n) => Math.floor((Number(n ?? 10) - 10) / 2);
-export const prof = (s) =>
-  s.level <= 20 ? 2 + Math.floor((Math.max(1, s.level) - 1) / 4) : Number(s.proficiency || 6);
 export const signed = (n) => `${n >= 0 ? '+' : ''}${n}`;
 export const skillBonus = (s, k) =>
   mod(s.attributes[attrCodes[k.attribute]]) + prof(s) * (Number(s.skillTraining[k.id]) || 0);

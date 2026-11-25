@@ -6,57 +6,820 @@
       "id": "sem-categoria",
       "name": "Sem Categoria",
       "source": "Livro do Jogador",
-      "page": "33–59",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 31,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Ainda não despertou o Nen. Tudo daqui é trocado ao receber uma categoria.",
+      "main": "Força",
+      "saves": [],
+      "saveChoice": {
+        "count": 2,
+        "options": ["Força", "Agilidade", "Constituição", "Sabedoria", "Espírito", "Presença"]
+      },
+      "features": [
+        {
+          "name": "Início",
+          "text": "Um talento, duas Habilidades Básicas e três métodos de combate."
+        },
+        {
+          "name": "Estamina",
+          "text": "Aura de 20 × nível, usada em técnicas de métodos; gera até 2 × nível por rodada."
+        },
+        {
+          "name": "Talento Genial",
+          "text": "No encontro: 4 PVE temporários, +3 de ataque (+1 com arma de fogo) e +3 de CR."
+        },
+        {
+          "name": "Potencial Ilimitado",
+          "text": "3 Pontos de Treinamento e 1 Ponto de Potencial por sessão."
+        },
+        {
+          "name": "Despertar do Nen",
+          "text": "Ao despertar, recebe 20 Pontos de Treinamento."
+        }
+      ],
+      "paths": []
     },
     {
       "id": "aprimorador",
       "name": "Aprimorador",
       "source": "Livro do Jogador",
-      "page": "33–59",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 32,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Fortalece corpo, mente ou objetos. O mais resistente das categorias.",
+      "hitDie": 12,
+      "average": 7,
+      "main": "Força",
+      "saves": ["Constituição"],
+      "saveChoice": {
+        "count": 1,
+        "options": ["Força", "Agilidade"]
+      },
+      "features": [
+        {
+          "name": "Início",
+          "text": "Uma Habilidade Básica inata, três Habilidades Básicas (níveis 1 a 3), três métodos de combate e 1 talento; outro talento a cada nível par."
+        },
+        {
+          "name": "Estilo do Aprimorador",
+          "text": "Sem Recuar: +1 CR a cada 20 PV perdidos (até +5). Vigor Ilimitado: dano máximo ou crítico recupera 3 PA. Impacto Big Bang: 1 PA, 2d10 (4d10 no 6º nível, 6d10 no 18º).",
+          "level": 3
+        },
+        {
+          "name": "Aumento de Atributo (AVA)",
+          "text": "Nos níveis 4, 8, 12, 16 e 19: +2 em um atributo ou +1 em dois, até 20 (22 no 12º e 24 no 16º). Aplique à mão.",
+          "level": 4
+        },
+        {
+          "name": "Acúmulo de Aura",
+          "text": "No início do turno, gera aura extra igual ao nível. 3 vezes por encontro.",
+          "level": 5
+        },
+        {
+          "name": "Ataque Extra",
+          "text": "A ação Atacar permite dois ataques.",
+          "level": 7
+        },
+        {
+          "name": "Vitalidade Transbordante",
+          "text": "Começar o turno com menos de 50 PV leva a 100, até 10 × nível no total. Gera 3 × nível de aura por rodada.",
+          "level": 11
+        },
+        {
+          "name": "Mestre Aprimorador",
+          "text": "Técnicas custam menos metade do grau; ignora efeitos e dano abaixo de 35 de criaturas de ND 9 ou menor; ganha a característica de 6º nível de outro caminho.",
+          "level": 18
+        },
+        {
+          "name": "Aprimorador Absoluto",
+          "text": "Destrói estruturas e, uma vez por descanso longo, entra na Forma Perfeita à custa de Constituição.",
+          "level": 20
+        }
+      ],
+      "paths": [
+        {
+          "name": "Aprimorador Físico",
+          "summary": "Linha de frente, com força e agilidade em sinergia. Atributo principal: Força ou Agilidade.",
+          "features": [
+            {
+              "name": "Físico Profano",
+              "text": "Metade do modificador principal em salvaguardas do secundário e 2 bônus à escolha (p. 35).",
+              "level": 2
+            },
+            {
+              "name": "Brutalidade Desenfreada",
+              "text": "Redução de dano que cresce por turno até o nível, empurrão de 9 m e crítico com mais metade do nível.",
+              "level": 6
+            },
+            {
+              "name": "Domínio Físico",
+              "text": "10 PA: Força, Agilidade ou Constituição vira 30 por uma rodada.",
+              "level": 10
+            },
+            {
+              "name": "Constituição Perfeita",
+              "text": "Dados de vida valem o máximo e +2d4 nos ataques comuns.",
+              "level": 14
+            }
+          ],
+          "mains": ["Força", "Agilidade"],
+          "maxHitDieLevel": 14
+        },
+        {
+          "name": "Aprimorador Mental",
+          "summary": "Estrategista que aprimora mente e reflexos. Atributo principal: Sabedoria.",
+          "features": [
+            {
+              "name": "Mente Genial",
+              "text": "+2 em testes de Sabedoria (some à mão), salvaguarda de Sabedoria, proficiência em Percepção e maestria em Intuição.",
+              "level": 2
+            },
+            {
+              "name": "Acúmulo de Potencial",
+              "text": "Converte até 3 dados de aura em Pontos de Potencial para baratear técnicas, subir CD ou melhorar dados.",
+              "level": 6
+            },
+            {
+              "name": "Domínio Mental",
+              "text": "10 PA: Espírito, Sabedoria ou Presença vira 30 por uma rodada.",
+              "level": 10
+            },
+            {
+              "name": "Mente Perfeita",
+              "text": "3 reações extras e 2 dados máximos em curas e reduções.",
+              "level": 14
+            }
+          ],
+          "mains": ["Sabedoria"],
+          "skillGrants": {
+            "percepcao": 1,
+            "intuicao": 2
+          },
+          "saves": ["Sabedoria"],
+          "grantLevel": 2
+        },
+        {
+          "name": "Aprimorador Externo",
+          "summary": "Aprimora aliados e objetos em vez do próprio corpo.",
+          "features": [
+            {
+              "name": "Afinidade Sutil",
+              "text": "Recebe Shu e Envolver Objeto, usáveis à distância.",
+              "level": 2
+            },
+            {
+              "name": "Aprimoramento Natural",
+              "text": "+2 dados ou metade do nível em aliados e objetos, e bônus em salvaguardas do aliado.",
+              "level": 6
+            },
+            {
+              "name": "Domínio Externo",
+              "text": "6 PA: +4 em um atributo do aliado até 30, ou CR 30 para um objeto.",
+              "level": 10
+            },
+            {
+              "name": "Aprimoramento Aperfeiçoado",
+              "text": "Ação bônus extra por turno e efeitos também em si.",
+              "level": 14
+            }
+          ],
+          "mains": ["Força", "Agilidade", "Sabedoria", "Presença"]
+        }
+      ]
     },
     {
       "id": "emissor",
       "name": "Emissor",
       "source": "Livro do Jogador",
-      "page": "33–59",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 38,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Separa a aura do corpo para atacar e se mover.",
+      "hitDie": 10,
+      "average": 6,
+      "main": "Agilidade",
+      "saves": ["Força", "Agilidade"],
+      "features": [
+        {
+          "name": "Início",
+          "text": "Uma Habilidade Básica inata, três Habilidades Básicas (níveis 1 a 3), três métodos de combate e 1 talento; outro talento a cada nível par."
+        },
+        {
+          "name": "Estilo do Emissor",
+          "text": "Emissão de Aura: ataque que errou fica suspenso para novo disparo. Ataque Verdadeiro: ignora interferências. Vigor Renovado: recupera PA. Emissão Destruidora: dano mínimo de metade.",
+          "level": 3
+        },
+        {
+          "name": "Aumento de Atributo (AVA)",
+          "text": "Nos níveis 4, 8, 12, 16 e 19: +2 em um atributo ou +1 em dois, até 20 (22 no 12º e 24 no 16º). Aplique à mão.",
+          "level": 4
+        },
+        {
+          "name": "Acúmulo de Aura",
+          "text": "No início do turno, gera aura extra igual ao nível. 3 vezes por encontro.",
+          "level": 5
+        },
+        {
+          "name": "Ataque Extra",
+          "text": "A ação Atacar permite dois ataques.",
+          "level": 7
+        },
+        {
+          "name": "Recuo Estratégico",
+          "text": "Recua o deslocamento e usa uma técnica por metade do custo. Usos iguais à proficiência por descanso longo.",
+          "level": 11
+        },
+        {
+          "name": "Mestre Emissor",
+          "text": "+6 Pontos de Atributo no principal (até 30), ataques comuns acertam e 15–20 causa dano máximo. Aplique os pontos à mão.",
+          "level": 18
+        },
+        {
+          "name": "Emissor Absoluto",
+          "text": "Dano máximo também em críticos e duas técnicas auxiliares lendárias.",
+          "level": 20
+        }
+      ],
+      "paths": [
+        {
+          "name": "Emissor de Combate",
+          "summary": "Usa a aura de forma ofensiva e em alta velocidade.",
+          "features": [
+            {
+              "name": "Emissão Eficiente",
+              "text": "Vantagem contra Caído, Impedido e Incapacitado; reação de ataque com +2d4; escalada igual ao deslocamento.",
+              "level": 2
+            },
+            {
+              "name": "Emissão Brutal",
+              "text": "Cone de 18 m: 4d8 ou empurra 12 m.",
+              "level": 6
+            },
+            {
+              "name": "Emissão Inteligente",
+              "text": "Guarda técnicas em esferas por até 5 rodadas.",
+              "level": 10
+            },
+            {
+              "name": "Brutamontes",
+              "text": "Custos −1 PA, +2d4 nos ataques e ignora resistência física.",
+              "level": 14
+            }
+          ]
+        },
+        {
+          "name": "Emissor de Teletransporte",
+          "summary": "Desloca corpo e golpes pelo espaço. Exige habilidades de teletransporte.",
+          "features": [
+            {
+              "name": "Deslocamento Espacial",
+              "text": "Teleporta 3 m a cada ataque; 2 PA para um bônus defensivo.",
+              "level": 2
+            },
+            {
+              "name": "Ataque Paralisante",
+              "text": "Superar a CR em 5 após teletransporte tira uma ação do alvo.",
+              "level": 6
+            },
+            {
+              "name": "Esquiva Espacial",
+              "text": "Resistência a dano físico após teletransportar.",
+              "level": 10
+            },
+            {
+              "name": "Domínio Espacial",
+              "text": "Alcance de 6 m, custo −1 PA e ataques a 90 m.",
+              "level": 14
+            }
+          ]
+        },
+        {
+          "name": "Controlador",
+          "summary": "Controla Bestas de Nen; recebe o caminho Marionetista do Manipulador.",
+          "features": []
+        }
+      ]
     },
     {
       "id": "transmutador",
       "name": "Transmutador",
       "source": "Livro do Jogador",
-      "page": "33–59",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 42,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Muda as propriedades da aura, com estilo versátil.",
+      "hitDie": 10,
+      "average": 6,
+      "main": "Agilidade",
+      "saves": ["Agilidade", "Constituição"],
+      "features": [
+        {
+          "name": "Início",
+          "text": "Uma Habilidade Básica inata, três Habilidades Básicas (níveis 1 a 3), três métodos de combate e 1 talento; outro talento a cada nível par."
+        },
+        {
+          "name": "Transmutação Rápida",
+          "text": "Com Hatsu, um efeito de até 2 PA fica sempre ativo nos ataques normais."
+        },
+        {
+          "name": "Estilo do Transmutador",
+          "text": "d6 iguais ao nível por descanso, para crítico 18–20, reduzir custo, melhorar d20, atacar por reação ou somar dano.",
+          "level": 3
+        },
+        {
+          "name": "Aumento de Atributo (AVA)",
+          "text": "Nos níveis 4, 8, 12, 16 e 19: +2 em um atributo ou +1 em dois, até 20 (22 no 12º e 24 no 16º). Aplique à mão.",
+          "level": 4
+        },
+        {
+          "name": "Acúmulo de Aura",
+          "text": "No início do turno, gera aura extra igual ao nível. 3 vezes por encontro.",
+          "level": 5
+        },
+        {
+          "name": "Ataque Extra",
+          "text": "A ação Atacar permite dois ataques.",
+          "level": 7
+        },
+        {
+          "name": "Conversão de Aura",
+          "text": "Em concentração: +5 CR, cura 12 PV por turno, mais dados (d10) e aura por dados.",
+          "level": 11
+        },
+        {
+          "name": "Mestre Transmutador",
+          "text": "9 talentos, 12 Pontos de Nen ou 60 de Treinamento; transmutação de até 4 PA.",
+          "level": 18
+        },
+        {
+          "name": "Transmutador Absoluto",
+          "text": "Crítico 18–20 que ignora reações e o dobro de dados.",
+          "level": 20
+        }
+      ],
+      "paths": [
+        {
+          "name": "Transmutador Traiçoeiro",
+          "summary": "Explora fraquezas do inimigo.",
+          "features": [
+            {
+              "name": "Golpe Traiçoeiro",
+              "text": "Errar ainda causa o modificador principal.",
+              "level": 2
+            },
+            {
+              "name": "Adaptação Constante",
+              "text": "Dano em dobro ao errar e também ao acertar; resistência após crítico físico sofrido.",
+              "level": 6
+            },
+            {
+              "name": "Concentração Inabalável",
+              "text": "Por 1 minuto, d20 até 9 vale 10. 3 vezes por descanso longo.",
+              "level": 10
+            },
+            {
+              "name": "Transformador",
+              "text": "Ataques contra você nunca têm vantagem; críticos causam Estremecido.",
+              "level": 14
+            }
+          ]
+        },
+        {
+          "name": "Transmutador Elemental",
+          "summary": "Domina elementos devastadores.",
+          "features": [
+            {
+              "name": "Manto Elemental",
+              "text": "Devolve dano elemental a quem ataca a até 6 m.",
+              "level": 2
+            },
+            {
+              "name": "Surto Elemental",
+              "text": "Mais alcance em linha, cone e raio; dano alto gera dados elementais.",
+              "level": 6
+            },
+            {
+              "name": "Concentração Absoluta",
+              "text": "Após 20 natural (ou 1 do alvo), +5 nos d20 por 1 minuto.",
+              "level": 10
+            },
+            {
+              "name": "Elementalista",
+              "text": "Custo −1 PA e PV temporários de 5 × PA gasto.",
+              "level": 14
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "conjurador",
       "name": "Conjurador",
       "source": "Livro do Jogador",
-      "page": "33–59",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 46,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Cria objetos, criaturas ou espaços com a aura.",
+      "hitDie": 8,
+      "average": 5,
+      "main": "Sabedoria",
+      "saves": ["Constituição", "Sabedoria"],
+      "features": [
+        {
+          "name": "Início",
+          "text": "Uma Habilidade Básica inata, três Habilidades Básicas (níveis 1 a 3), três métodos de combate e 1 talento; outro talento a cada nível par."
+        },
+        {
+          "name": "Estilo do Conjurador",
+          "text": "d6 iguais ao nível por descanso (d8 no 10º) para somar dano, reduzir dano em dobro ou ganhar deslocamento.",
+          "level": 3
+        },
+        {
+          "name": "Aumento de Atributo (AVA)",
+          "text": "Nos níveis 4, 8, 12, 16 e 19: +2 em um atributo ou +1 em dois, até 20 (22 no 12º e 24 no 16º). Aplique à mão.",
+          "level": 4
+        },
+        {
+          "name": "Acúmulo de Aura",
+          "text": "No início do turno, gera aura extra igual ao nível. 3 vezes por encontro.",
+          "level": 5
+        },
+        {
+          "name": "Ataque Extra",
+          "text": "A ação Atacar permite dois ataques.",
+          "level": 7
+        },
+        {
+          "name": "Ciclo de Aura",
+          "text": "Ação bônus: cura 8d6 + Constituição e imunidade a efeitos negativos. Usos iguais ao mod. de Espírito.",
+          "level": 11
+        },
+        {
+          "name": "Mestre Conjurador",
+          "text": "O dobro de dados, uma habilidade inata e uma Passiva Principal.",
+          "level": 18
+        },
+        {
+          "name": "Conjurador Absoluto",
+          "text": "Habilidade Principal de nível 10 e um Aspecto Inato de outra categoria.",
+          "level": 20
+        }
+      ],
+      "paths": [
+        {
+          "name": "Conjurador de Batalha",
+          "summary": "Conjurações que apoiam a luta, sem armas.",
+          "features": [
+            {
+              "name": "Implacável",
+              "text": "−2 na CR (some à mão), crítico 19–20 com dano máximo e ataque como ação bônus.",
+              "level": 2
+            },
+            {
+              "name": "Combatente",
+              "text": "Soma Espírito ao dano e não sofre desvantagem em ataques.",
+              "level": 6
+            },
+            {
+              "name": "Surto de Ação",
+              "text": "Primeiro na iniciativa, com dois turnos seguidos.",
+              "level": 10
+            },
+            {
+              "name": "Instinto de Agressão",
+              "text": "Armadura de 2 × PA gasto, dois dados máximos e duração dobrada.",
+              "level": 14
+            }
+          ]
+        },
+        {
+          "name": "Conjurador Dimensional",
+          "summary": "Cria espaços com regras próprias.",
+          "features": [
+            {
+              "name": "Defensivo",
+              "text": "Esquiva automática com +1 CR e contra-ataque por reação.",
+              "level": 2
+            },
+            {
+              "name": "Oportunista",
+              "text": "Soma Espírito; após dois erros, o terceiro acerta.",
+              "level": 6
+            },
+            {
+              "name": "Plano Infalível",
+              "text": "Primeiro na iniciativa, com um turno especial de preparo.",
+              "level": 10
+            },
+            {
+              "name": "Dimensão Adaptável",
+              "text": "Uma regra extra, ignora 2 efeitos e reduz custos dentro dela.",
+              "level": 14
+            }
+          ]
+        },
+        {
+          "name": "Conjurador Bélico",
+          "summary": "Conjura armas e objetos de ataque.",
+          "features": [
+            {
+              "name": "Paranoico",
+              "text": "Reduz 4d8 e se move uma vez por rodada; reage a críticos com bônus.",
+              "level": 2
+            },
+            {
+              "name": "Espada e Escudo",
+              "text": "Espírito em reduções, arma d12 e +2 de acerto.",
+              "level": 6
+            },
+            {
+              "name": "Explosão de Poder",
+              "text": "Primeiro na iniciativa: ataca até 60 m e recua.",
+              "level": 10
+            },
+            {
+              "name": "Armamento Divino",
+              "text": "+2d4, ignora resistência e vantagem em técnicas.",
+              "level": 14
+            }
+          ]
+        },
+        {
+          "name": "Invocador",
+          "summary": "Cria Bestas de Nen; recebe o caminho Marionetista do Manipulador.",
+          "features": []
+        }
+      ]
     },
     {
       "id": "manipulador",
       "name": "Manipulador",
       "source": "Livro do Jogador",
-      "page": "33–59",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 51,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Controla objetos, corpos ou criaturas.",
+      "hitDie": 8,
+      "average": 5,
+      "main": "Sabedoria",
+      "saves": ["Constituição", "Sabedoria"],
+      "features": [
+        {
+          "name": "Início",
+          "text": "Uma Habilidade Básica inata, três Habilidades Básicas (níveis 1 a 3), três métodos de combate e 1 talento; outro talento a cada nível par."
+        },
+        {
+          "name": "Estilo do Manipulador",
+          "text": "Uma Habilidade Básica e dois talentos a mais; criar ou controlar criaturas exige 2 níveis a menos.",
+          "level": 3
+        },
+        {
+          "name": "Aumento de Atributo (AVA)",
+          "text": "Nos níveis 4, 8, 12, 16 e 19: +2 em um atributo ou +1 em dois, até 20 (22 no 12º e 24 no 16º). Aplique à mão.",
+          "level": 4
+        },
+        {
+          "name": "Acúmulo de Aura",
+          "text": "No início do turno, gera aura extra igual ao nível. 3 vezes por encontro.",
+          "level": 5
+        },
+        {
+          "name": "Ataque Extra",
+          "text": "A ação Atacar permite dois ataques.",
+          "level": 7
+        },
+        {
+          "name": "Talento de Manipulador",
+          "text": "3 vezes por encontro, paga técnica com a Aura Total.",
+          "level": 11
+        },
+        {
+          "name": "Mestre Manipulador",
+          "text": "Custos menores, vantagem para o que controla e 3 técnicas sem custo por descanso longo.",
+          "level": 18
+        },
+        {
+          "name": "Manipulador Absoluto",
+          "text": "Lacaios mais baratos ou +4 em Sabedoria (até 30) e CR, e aura adicional.",
+          "level": 20
+        }
+      ],
+      "paths": [
+        {
+          "name": "Manipulador Bélico",
+          "summary": "Controla armas e objetos.",
+          "features": [
+            {
+              "name": "Arma Única",
+              "text": "Ignora resistências, crítico 19–20 e dano que cresce a cada crítico.",
+              "level": 2
+            },
+            {
+              "name": "Eficiência Superior",
+              "text": "Errar com mais de 2 PA devolve metade.",
+              "level": 6
+            },
+            {
+              "name": "Ação Rápida",
+              "text": "Uma ação bônus a mais por turno.",
+              "level": 10
+            },
+            {
+              "name": "Estilo Letal",
+              "text": "+2d4 e 3 dados passam mesmo se o dano for anulado.",
+              "level": 14
+            }
+          ]
+        },
+        {
+          "name": "Manipulador Físico",
+          "summary": "Afeta o próprio corpo ou o de um voluntário.",
+          "features": [
+            {
+              "name": "Corpo Forjado",
+              "text": "Errar dá +2 no próximo ataque; rola de novo 1 natural.",
+              "level": 2
+            },
+            {
+              "name": "Ativação Veloz",
+              "text": "d20 15+ permite outra técnica como ação bônus.",
+              "level": 6
+            },
+            {
+              "name": "Ação Rápida",
+              "text": "Uma ação bônus a mais por turno.",
+              "level": 10
+            },
+            {
+              "name": "Sincronia Perfeita",
+              "text": "30 de armadura, resistência física e metade de um dano por turno.",
+              "level": 14
+            }
+          ]
+        },
+        {
+          "name": "Manipulador Restrito",
+          "summary": "Combina manipulação com conjuração ou emissão.",
+          "features": [
+            {
+              "name": "Ativação Impecável",
+              "text": "Dano em área nunca cai a 0, +2 dados, e PA igual nega o dano sofrido.",
+              "level": 2
+            },
+            {
+              "name": "Manipulação Defensiva",
+              "text": "Anular todo o dano libera uma técnica no próximo turno.",
+              "level": 6
+            },
+            {
+              "name": "Ação Rápida",
+              "text": "Uma ação bônus a mais, exceto para dano ou condição.",
+              "level": 10
+            },
+            {
+              "name": "Dificuldade Crescente",
+              "text": "CD ou acerto cresce +2 a cada falha grave do alvo ou crítico.",
+              "level": 14
+            }
+          ]
+        },
+        {
+          "name": "Marionetista",
+          "summary": "Controla criaturas, Bestas de Nen ou pessoas.",
+          "features": [
+            {
+              "name": "Batalha em Equipe",
+              "text": "Vantagem com aliado a 3 m do alvo; controlados ganham 25 PV.",
+              "level": 2
+            },
+            {
+              "name": "Cálculo Perfeito",
+              "text": "Guarda 5 d20 por descanso longo para trocar rolagens.",
+              "level": 6
+            },
+            {
+              "name": "Horda",
+              "text": "Une lacaios em uma ficha mais forte.",
+              "level": 10
+            },
+            {
+              "name": "Vínculo Inquebrável",
+              "text": "Transfere dano, evita perder controle e cria um a mais.",
+              "level": 14
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "especialista",
       "name": "Especialista",
       "source": "Livro do Jogador",
-      "page": "33–59",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 56,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Habilidades únicas, fora das outras categorias.",
+      "hitDie": 6,
+      "average": 4,
+      "main": "Presença",
+      "saves": ["Espírito", "Presença"],
+      "features": [
+        {
+          "name": "Início",
+          "text": "Uma Habilidade Básica inata, três Habilidades Básicas (níveis 1 a 3), três métodos de combate e 1 talento; outro talento a cada nível par."
+        },
+        {
+          "name": "Estilo do Especialista",
+          "text": "Habilidoso (efeito especial de atributo), Eficiência Avançada, Retomar Fôlego e Redirecionar ataques.",
+          "level": 3
+        },
+        {
+          "name": "Aumento de Atributo (AVA)",
+          "text": "Nos níveis 4, 8, 12, 16 e 19: +2 em um atributo ou +1 em dois, até 20 (22 no 12º e 24 no 16º). Aplique à mão.",
+          "level": 4
+        },
+        {
+          "name": "Acúmulo de Aura",
+          "text": "No início do turno, gera aura extra igual ao nível. 3 vezes por encontro.",
+          "level": 5
+        },
+        {
+          "name": "Ataque Extra",
+          "text": "A ação Atacar permite dois ataques.",
+          "level": 7
+        },
+        {
+          "name": "Surto de Aura",
+          "text": "Antes do encontro, ativa várias técnicas com a Aura Total.",
+          "level": 11
+        },
+        {
+          "name": "Mestre Especialista",
+          "text": "10 Pontos de Nen, imunidade a efeitos de até 4 PA e ativação sem ação por 3 × o custo.",
+          "level": 18
+        },
+        {
+          "name": "Especialista Absoluto",
+          "text": "Nível 20 de outra categoria ou manifestação extra, e uma ação lendária.",
+          "level": 20
+        }
+      ],
+      "paths": [
+        {
+          "name": "Especialista Adaptativo",
+          "summary": "Escolhe entre combate, liderança ou instinto.",
+          "features": [
+            {
+              "name": "Superdotado",
+              "text": "Combate (dado de vida +1 passo, outro atributo principal), Liderança ou Sexto Sentido (p. 59). Ajuste os PV à mão.",
+              "level": 2
+            },
+            {
+              "name": "Talento Genial",
+              "text": "Defesa ou técnica que não surte efeito devolve recursos.",
+              "level": 6
+            },
+            {
+              "name": "Movimento Empoderado",
+              "text": "Uma ação adicional por turno, limitada.",
+              "level": 10
+            },
+            {
+              "name": "Adaptação Superior",
+              "text": "Um caminho de outra categoria e +4 Pontos de Atributo (aplique à mão).",
+              "level": 14
+            }
+          ],
+          "mains": ["Presença", "Força", "Agilidade", "Sabedoria"]
+        },
+        {
+          "name": "Colecionador",
+          "summary": "Rouba habilidades de outras criaturas.",
+          "features": [
+            {
+              "name": "Caminho Limitado",
+              "text": "Liderança ou Sexto Sentido do Adaptativo.",
+              "level": 2
+            },
+            {
+              "name": "Ativação Refinada",
+              "text": "Habilidades roubadas custam até 10 PA a menos. Usos iguais à proficiência.",
+              "level": 6
+            },
+            {
+              "name": "Maestria Fluida",
+              "text": "Ao usar Hatsu roubado, recebe um Aspecto Inato.",
+              "level": 10
+            },
+            {
+              "name": "Colecionador Post Mortem",
+              "text": "Sorte CD 30 menos o ND para manter um Hatsu perdido pela morte do dono.",
+              "level": 14
+            }
+          ]
+        }
+      ]
     }
   ]
 }

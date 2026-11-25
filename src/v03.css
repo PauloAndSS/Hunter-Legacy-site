@@ -943,6 +943,55 @@ h3 {
   font-size: 12px;
   color: #4c5f51;
 }
+.auto-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+button.auto-tag {
+  min-height: 0;
+  margin: 0;
+  padding: 1px 5px;
+  border: 0;
+}
+button.auto-tag.manual {
+  color: #f6ead3;
+  background: #6b5a3a;
+}
+.stat-diamond .auto-field {
+  flex-direction: column;
+  gap: 2px;
+}
+.stat-diamond .auto-field b {
+  font:
+    700 28px Georgia,
+    serif;
+}
+.level-tag {
+  margin-left: 8px;
+  padding: 0 6px;
+  font-size: 10px;
+  font-weight: 400;
+  background: #ded2b0;
+  border-radius: 4px;
+}
+.feature.path {
+  background: #e7efdb;
+}
+.background-tab .pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 10px;
+  margin-bottom: 8px;
+}
+.background-tab .pair small {
+  grid-column: 1/-1;
+}
+.background-tab label > small,
+.background-tab .pair small {
+  font-weight: 400;
+  color: #65745f;
+}
 button.link {
   min-height: 0;
   padding: 0;
