@@ -610,11 +610,14 @@ h3 {
 }
 .sheet-tabs {
   display: flex;
+  overflow-x: auto;
   gap: 8px;
   padding: 0 16px;
   border-bottom: 1px solid #cbbd9c;
 }
 .sheet-tabs button {
+  flex: none;
+  white-space: nowrap;
   border: none;
   border-bottom: 2px solid transparent;
   background: transparent;
@@ -812,22 +815,268 @@ h3 {
   font-size: 11px;
   color: #65745f;
 }
-.sheet-edit {
-  padding: 18px;
+/* Edição com o mesmo desenho da leitura. */
+.editing input,
+.editing select,
+.editing textarea {
+  min-height: 0;
 }
-.sheet-edit h3 {
-  margin-top: 22px;
+.sheet-num {
+  width: 64px;
+  padding: 3px 4px;
+  text-align: center;
+  font-weight: 700;
+  appearance: textfield;
 }
-.sheet-edit .fields {
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+.sheet-num::-webkit-inner-spin-button {
+  display: none;
+}
+.hero-name {
+  width: 100%;
+  margin: 3px 0;
+  padding: 2px 8px;
+  font:
+    700 clamp(22px, 4vw, 34px) Georgia,
+    serif;
+  color: #f9efcf;
+  background: #ffffff14;
+  border: 1px dashed #d8bd78;
+}
+.hero-name::placeholder {
+  color: #cad7c199;
+}
+.editing .sheet-hero > div:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+.level-disc .sheet-num {
+  width: 46px;
+  padding: 0;
+  font:
+    700 25px Georgia,
+    serif;
+  color: #f9efcf;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px dashed #d8bd78;
+  border-radius: 0;
+}
+.attribute-tile {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: #fffbef;
+  border: 1px dashed #a58f55;
+  padding: 10px 3px;
+  gap: 3px;
+  border-radius: 6px 6px 12px 12px;
+}
+.attribute-tile .sheet-num {
+  width: 56px;
+  background: #244638;
+  border-color: #244638;
+  color: #f7eed3;
+  font-size: 13px;
+}
+.attribute-tile em {
+  font-size: 10px;
+  font-style: normal;
+  color: #7a6227;
+  text-align: center;
+}
+.stat-diamond .sheet-num,
+.mini-stats .sheet-num,
+.meter-inputs .sheet-num,
+.attack-edit .sheet-num {
+  color: #f6ead3;
+  background: #132c23;
+  border: 1px dashed #bda46c;
+}
+.stat-diamond .sheet-num {
+  width: 60px;
+  font:
+    700 24px Georgia,
+    serif;
+}
+.meter-inputs {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+}
+.meter-inputs .sheet-num {
+  width: 52px;
+}
+.meter > div:first-child:has(.meter-inputs) {
+  align-items: center;
+}
+.attack-edit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px dashed #bda46c;
+  border-radius: 7px;
+}
+.auto-tag {
+  margin-left: 6px;
+  padding: 0 5px;
+  font-size: 9px;
+  font-style: normal;
+  color: #5d4a17;
+  background: #ead9a5;
+  border-radius: 4px;
+}
+.identity-field select {
+  width: 100%;
+  padding: 5px 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.identity-field p {
+  margin: 4px 0;
+  font-size: 12px;
+  color: #4c5f51;
+}
+button.link {
+  min-height: 0;
+  padding: 0;
+  font-size: 12px;
+  color: #275643;
+  background: none;
+  border: 0;
+  text-decoration: underline;
+}
+.background-tab {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+  padding: 16px;
+  align-items: start;
+}
+.drawer .background-tab {
+  grid-template-columns: 1fr;
+}
+.background-tab > section {
+  min-width: 0;
+  padding: 16px;
+  background: #fffbef;
+  border: 1px solid #c8b98f;
+  border-radius: 10px;
+}
+.background-tab h3 {
+  margin: 2px 0 6px;
+}
+.background-tab p {
+  margin: 8px 0;
+  font-size: 13px;
+}
+.background-tab select {
+  width: 100%;
+  padding: 6px 8px;
+  font-weight: 700;
+}
+.background-tab > section > small:first-child {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: #79662f;
+}
+.benefits {
+  padding: 9px 12px;
+  background: #e7efdb;
+  border-radius: 8px;
+  font-size: 13px;
+}
+.benefits ul,
+.feature ul {
+  margin: 4px 0 0;
+  padding-left: 18px;
+}
+.feature {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #f1e9d7;
+  border: 1px solid #d1c4a4;
+  border-radius: 8px;
+}
+.feature.locked {
+  opacity: 0.65;
+}
+.feature h4 {
+  margin: 0;
+  font-size: 13px;
+}
+.feature p {
+  margin: 4px 0;
+}
+.feature li {
+  font-size: 12px;
+}
+.feature li.current {
+  font-weight: 700;
+  color: #275643;
+}
+.auto-toggle {
+  margin: 10px 0;
+  font-size: 13px;
+}
+.skill-picker {
+  margin: 10px 0;
+  padding: 8px 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 4px 10px;
+  border: 1px solid #d1c4a4;
+  border-radius: 8px;
+}
+.skill-picker legend {
+  font-size: 12px;
+}
+.skill-picker label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+.skill-picker label.on {
+  font-weight: 700;
+}
+.skill-picker input {
+  width: auto;
+}
+.sheet-tab-content .technique-row {
+  grid-template-columns: 1fr 110px 64px 32px;
+}
+.sheet-tab-content textarea {
+  width: 100%;
 }
 .sheet-save {
-  margin-top: 20px;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  margin: 0;
+  max-width: none;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  background: #eee4c9;
+  border-top: 1px solid #c8b88f;
 }
-.technique-edit {
-  padding: 8px;
-  background: #eee5cd;
-  border-radius: 8px;
+.sheet-save .error {
+  flex: 1 0 100%;
+  margin: 0;
+}
+@media (max-width: 760px) {
+  .background-tab {
+    grid-template-columns: 1fr;
+  }
 }
 .sheet-tab-content {
   padding: 20px;

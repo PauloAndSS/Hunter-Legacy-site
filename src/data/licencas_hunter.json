@@ -1,0 +1,51 @@
+{
+  "ruleset": "hunter-legacy-3.0.1",
+  "catalog": "licencas_hunter",
+  "entries": [
+    {
+      "id": "amador",
+      "name": "Amador",
+      "source": "Livro do Jogador",
+      "page": 145,
+      "status": "revisado",
+      "automation": "manual",
+      "summary": "Passou no exame, mas ainda não usa Nen. Privilégios da licença e informações Rank D."
+    },
+    {
+      "id": "pro",
+      "name": "Pro Hunter",
+      "source": "Livro do Jogador",
+      "page": 145,
+      "status": "revisado",
+      "automation": "manual",
+      "summary": "Domina o Nen. Recebe o Conhecimento do Ofício, os talentos e a proficiência nas ferramentas da classe; informações Rank C."
+    },
+    {
+      "id": "single",
+      "name": "1 estrela (Single)",
+      "source": "Livro do Jogador",
+      "page": 145,
+      "status": "revisado",
+      "automation": "manual",
+      "summary": "15% de desconto legal, informações Rank B e 5 Pontos de Nen."
+    },
+    {
+      "id": "double",
+      "name": "2 estrelas (Double)",
+      "source": "Livro do Jogador",
+      "page": 146,
+      "status": "revisado",
+      "automation": "manual",
+      "summary": "Vantagem em perícias da classe 3 vezes por descanso longo, 20% de desconto, Rank A e 10 Pontos de Nen."
+    },
+    {
+      "id": "triple",
+      "name": "3 estrelas (Triple)",
+      "source": "Livro do Jogador",
+      "page": 146,
+      "status": "revisado",
+      "automation": "manual",
+      "summary": "Em testes da classe, d20 até 5 vale 6; transforma falha em sucesso (3 usos, recupera 1 por descanso longo); 30% de desconto, Rank S e 15 Pontos de Nen."
+    }
+  ]
+}

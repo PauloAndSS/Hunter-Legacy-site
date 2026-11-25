@@ -6,113 +6,708 @@
       "id": "acompanhante",
       "name": "Acompanhante",
       "source": "Livro do Jogador",
-      "page": "89–97",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 90,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Vive de entreter gente influente, com boa aparência e faro para informações.",
+      "save": "Presença",
+      "attribute": "Presença",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "atuacao",
+        "enganacao",
+        "furtividade",
+        "historia",
+        "intuicao",
+        "investigacao",
+        "persuasao",
+        "prestigitacao"
+      ],
+      "equipment": "Kit de falsificação (até ¥6.500), roupa de gala e ¥2.900",
+      "features": [
+        {
+          "name": "Amigos Influentes",
+          "text": "Diante de autoridades ou do submundo, ligue para um contato: Sorte CD 15 garante passagem livre, desde que você não seja hostil."
+        }
+      ]
     },
     {
       "id": "aprendiz-marcial",
       "name": "Aprendiz Marcial",
       "source": "Livro do Jogador",
-      "page": "89–97",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 90,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Iniciado em um dojo, seguro no combate de perto.",
+      "save": "Constituição",
+      "attribute": "Constituição",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "atletismo",
+        "acrobacia",
+        "intimidacao",
+        "intuicao",
+        "percepcao",
+        "prestigitacao",
+        "sobrevivencia"
+      ],
+      "equipment": "Quimono, arma marcial e ¥800",
+      "features": [
+        {
+          "name": "Desafiar Dojo",
+          "text": "Sorte CD 15 encontra um dojo que acolhe você e até 4 aliados. Vencer um dos mais fortes rende um empréstimo até completar ¥6.500, a devolver em um mês; sem devolver, a característica fica inativa."
+        }
+      ]
     },
     {
       "id": "ator",
       "name": "Ator",
       "source": "Livro do Jogador",
-      "page": "89–97",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 90,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Convence multidões de que é outra pessoa.",
+      "save": "Presença",
+      "attribute": "Presença",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "acrobacia",
+        "atuacao",
+        "enganacao",
+        "historia",
+        "intuicao",
+        "percepcao",
+        "persuasao",
+        "tecnologia"
+      ],
+      "equipment": "Dois kits de disfarce, roupa de gala e ¥3.500",
+      "features": [
+        {
+          "name": "Atuação Estupenda",
+          "text": "Com uma interpretação aceitável, Sorte CD 16 faz passar automaticamente em um teste social. 1 vez por descanso longo."
+        }
+      ]
+    },
+    {
+      "id": "cacador-de-recompensas",
+      "name": "Caçador de Recompensas",
+      "source": "Livro do Jogador",
+      "page": 91,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Rastreia e captura procurados em troca de pagamento.",
+      "save": "Espírito",
+      "attribute": "Força",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "acrobacia",
+        "atletismo",
+        "furtividade",
+        "intuicao",
+        "percepcao",
+        "investigacao",
+        "provocacao",
+        "sobrenatural",
+        "tecnologia"
+      ],
+      "equipment": "Livro de alvos antigos, kit de escalada, arma simples com proficiência, cantil e ¥1.600",
+      "features": [
+        {
+          "name": "Lista de Procurados",
+          "text": "Ao ouvir o nome de uma criatura, Sorte CD 15 rende uma informação sobre ela, à escolha do narrador."
+        }
+      ]
     },
     {
       "id": "comerciante",
       "name": "Comerciante",
       "source": "Livro do Jogador",
-      "page": "89–97",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 91,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Entende de logística, preços e lucro.",
+      "save": "Sabedoria",
+      "attribute": "Presença",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "atuacao",
+        "enganacao",
+        "historia",
+        "intuicao",
+        "investigacao",
+        "percepcao",
+        "persuasao",
+        "prestigitacao",
+        "tecnologia"
+      ],
+      "equipment": "Kit de avaliação e ¥3.200",
+      "features": [
+        {
+          "name": "Negociação",
+          "text": "Ao vender um item, Sorte CD 15 garante preço justo mais 3d10 × ¥65. Na falha, o preço cai no máximo 10%. 1 vez por descanso longo."
+        }
+      ]
     },
     {
       "id": "cozinheiro",
       "name": "Cozinheiro",
       "source": "Livro do Jogador",
-      "page": "89–97",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 91,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Alimenta o grupo e mantém a moral em longas viagens.",
+      "save": "Agilidade",
+      "attribute": "Agilidade",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "atuacao",
+        "atletismo",
+        "historia",
+        "percepcao",
+        "persuasao",
+        "prestigitacao",
+        "sobrevivencia"
+      ],
+      "equipment": "Kit de cozinha, roupa de cozinheiro e ¥1.100",
+      "features": [
+        {
+          "name": "Obter Alimentos",
+          "text": "Em ambiente apropriado, Sorte CD 15 encontra comida para uma refeição de até 5 pessoas. 1 vez por descanso longo."
+        }
+      ]
+    },
+    {
+      "id": "detetive",
+      "name": "Detetive",
+      "source": "Livro do Jogador",
+      "page": 92,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Resolve crimes e encontra pessoas por dedução.",
+      "save": "Sabedoria",
+      "attribute": "Sabedoria",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "atletismo",
+        "enganacao",
+        "furtividade",
+        "intuicao",
+        "investigacao",
+        "percepcao",
+        "persuasao",
+        "sobrenatural",
+        "tecnologia"
+      ],
+      "equipment": "Kit de disfarce, kit de avaliação, sobretudo e ¥1.350",
+      "features": [
+        {
+          "name": "Salto Lógico",
+          "text": "Em uma cena com rastros, Sorte CD 15 reconstrói o que houve, sem revelar a identidade dos envolvidos. Mais pistas, mais detalhes. 1 vez por descanso longo."
+        }
+      ]
     },
     {
       "id": "engenheiro",
       "name": "Engenheiro",
       "source": "Livro do Jogador",
-      "page": "89–97",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 92,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Opera e conserta máquinas e eletrônicos.",
+      "save": "Sabedoria",
+      "attribute": "Sabedoria",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "atletismo",
+        "historia",
+        "intuicao",
+        "percepcao",
+        "prestigitacao",
+        "pilotagem",
+        "sobrevivencia",
+        "tecnologia"
+      ],
+      "equipment": "Kit de chaves, kit de pesquisa, jaleco e ¥1.500",
+      "features": [
+        {
+          "name": "Reparo Emergencial",
+          "text": "Sorte com CD do narrador devolve algo quebrado a um estado funcional, ainda danificado."
+        }
+      ]
     },
     {
       "id": "explorador",
       "name": "Explorador",
       "source": "Livro do Jogador",
-      "page": "89–97",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 92,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Busca aventuras em lugares pouco conhecidos.",
+      "save": "Sabedoria",
+      "attribute": "Sabedoria",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "atletismo",
+        "historia",
+        "investigacao",
+        "intuicao",
+        "percepcao",
+        "prestigitacao",
+        "sobrenatural",
+        "sobrevivencia"
+      ],
+      "equipment": "Kit de escalada, kit de primeiros socorros e ¥1.220",
+      "features": [
+        {
+          "name": "Afinidade Selvagem",
+          "text": "Em dificuldade na natureza, Sorte com CD do narrador dá uma dica do caminho ou do que você procura."
+        }
+      ]
+    },
+    {
+      "id": "estudioso",
+      "name": "Estudioso",
+      "source": "Livro do Jogador",
+      "page": 93,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Dedica a vida ao ensino ou à pesquisa.",
+      "save": "Sabedoria",
+      "attribute": "Sabedoria",
+      "attributeBonus": 2,
+      "skillCount": 2,
+      "skills": [
+        "atuacao",
+        "historia",
+        "intuicao",
+        "investigacao",
+        "percepcao",
+        "persuasao",
+        "sobrenatural",
+        "tecnologia"
+      ],
+      "equipment": "Kit de avaliação e ¥1.550",
+      "features": [
+        {
+          "name": "Biblioteca Mental",
+          "text": "Diante de ruínas, símbolos, línguas ou tecnologias, Sorte com CD do narrador revela uma informação relevante. 1 vez por descanso curto ou longo."
+        }
+      ]
     },
     {
       "id": "hacker",
       "name": "Hacker",
       "source": "Livro do Jogador",
-      "page": "89–97",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 93,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Protege ou invade redes e coleta informações.",
+      "save": "Sabedoria",
+      "attribute": "Sabedoria",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "furtividade",
+        "enganacao",
+        "historia",
+        "intuicao",
+        "investigacao",
+        "percepcao",
+        "prestigitacao",
+        "tecnologia"
+      ],
+      "equipment": "Notebook (40 h de bateria), celular e ¥2.650",
+      "features": [
+        {
+          "name": "Invasão de Rede",
+          "text": "Com internet, Sorte com CD do narrador encontra a informação certa ou a solução de um problema ligado a ela."
+        }
+      ]
     },
     {
       "id": "iniciado-em-medicina",
       "name": "Iniciado em Medicina",
       "source": "Livro do Jogador",
-      "page": "89–97",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 93,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Formou-se há pouco e sabe agir rápido com feridos.",
+      "save": "Constituição",
+      "attribute": "Sabedoria",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "enganacao",
+        "historia",
+        "intuicao",
+        "investigacao",
+        "medicina",
+        "percepcao",
+        "persuasao",
+        "prestigitacao",
+        "tecnologia"
+      ],
+      "equipment": "Kits de primeiros socorros, tratamento e remédio, jaleco e ¥1.400",
+      "features": [
+        {
+          "name": "Estabilizar",
+          "text": "Sorte com CD do narrador estabiliza alguém com doença ou ferida grave. O efeito acaba se a pessoa sofrer dano ou fizer mais que andar com metade do deslocamento."
+        }
+      ]
+    },
+    {
+      "id": "lutador-profissional",
+      "name": "Lutador Profissional",
+      "source": "Livro do Jogador",
+      "page": 94,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Luta por dinheiro e sabe dar um show.",
+      "save": "Constituição",
+      "attribute": "Constituição",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "atletismo",
+        "acrobacia",
+        "atuacao",
+        "intimidacao",
+        "intuicao",
+        "persuasao",
+        "sobrevivencia",
+        "tecnologia"
+      ],
+      "equipment": "Dois kits de primeiros socorros, roupa de boxeador e ¥2.900",
+      "features": [
+        {
+          "name": "Champion",
+          "text": "Em centros urbanos, Sorte com CD do narrador marca uma luta para o dia seguinte. Cachê de 5d6 × ¥65 mais ¥20 por nível acima do 1º; depois, conta como um dia sem descanso longo. 1 vez por descanso longo."
+        }
+      ]
     },
     {
       "id": "ladrao",
       "name": "Ladrão",
       "source": "Livro do Jogador",
-      "page": "89–97",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 94,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Vive de furtos planejados e de boas rotas de fuga.",
+      "save": "Agilidade",
+      "attribute": "Agilidade",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "atletismo",
+        "acrobacia",
+        "enganacao",
+        "furtividade",
+        "investigacao",
+        "prestigitacao",
+        "sorte",
+        "tecnologia"
+      ],
+      "equipment": "Kit de abrir cadeado, kit de disfarce e ¥800",
+      "features": [
+        {
+          "name": "Rastro Fantasma",
+          "text": "Ao invadir um lugar atrás de um item específico, Sorte com CD do narrador indica onde ele está."
+        }
+      ]
     },
     {
       "id": "marujo",
       "name": "Marujo",
       "source": "Livro do Jogador",
-      "page": "89–97",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 94,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Conhece o mar e navega pelas estrelas.",
+      "save": "Agilidade",
+      "attribute": "Força",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "atletismo",
+        "acrobacia",
+        "enganacao",
+        "historia",
+        "intuicao",
+        "percepcao",
+        "prestigitacao",
+        "sobrevivencia"
+      ],
+      "equipment": "Roupas de marujo, bugiganga do mar e ¥2.600",
+      "features": [
+        {
+          "name": "Estrela Guia",
+          "text": "Sob céu estrelado, Sorte CD 15 revela sua localização geral e a direção por 1 hora. 1 vez por descanso longo."
+        }
+      ]
+    },
+    {
+      "id": "matador-de-aluguel",
+      "name": "Matador de Aluguel",
+      "source": "Livro do Jogador",
+      "page": 95,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Contratado para eliminar alvos específicos.",
+      "save": "Agilidade",
+      "attribute": "Agilidade",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "atletismo",
+        "acrobacia",
+        "enganacao",
+        "furtividade",
+        "intuicao",
+        "percepcao",
+        "sobrevivencia",
+        "tecnologia"
+      ],
+      "equipment": "Kit de disfarce, roupas escuras, bugiganga do último trabalho, 5 adagas e ¥1.600",
+      "features": [
+        {
+          "name": "Análise Profissional",
+          "text": "Com informação suficiente sobre alguém, Sorte CD 15 revela o lugar que ele mais frequentou entre 6 meses e 1 mês atrás."
+        }
+      ]
+    },
+    {
+      "id": "mecanico",
+      "name": "Mecânico",
+      "source": "Livro do Jogador",
+      "page": 95,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Conserta e conduz praticamente qualquer veículo.",
+      "save": "Constituição",
+      "attribute": "Força",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "atletismo",
+        "enganacao",
+        "historia",
+        "investigacao",
+        "provocacao",
+        "intuicao",
+        "prestigitacao",
+        "tecnologia"
+      ],
+      "equipment": "Kit de chaves, kit de construção, roupa suja de graxa e ¥1.900",
+      "features": [
+        {
+          "name": "Modificação Rápida",
+          "text": "Sorte CD 15 recupera um veículo quase destruído ou o adapta a outro combustível; ele para após 8 horas. 1 vez por descanso longo e nunca no mesmo veículo."
+        }
+      ]
     },
     {
       "id": "monge",
       "name": "Monge",
       "source": "Livro do Jogador",
-      "page": "89–97",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 95,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Treinado em um templo para superar os limites do corpo. É careca.",
+      "save": "Sabedoria",
+      "attribute": "Força",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "atletismo",
+        "acrobacia",
+        "furtividade",
+        "historia",
+        "intuicao",
+        "provocacao",
+        "percepcao",
+        "sobrevivencia"
+      ],
+      "equipment": "Kit de escalada, veste de monastério e ¥1.250",
+      "features": [
+        {
+          "name": "Companheiro Taoista",
+          "text": "Sorte CD 16 encontra um templo que abriga você e até 4 aliados para um descanso curto sem interrupção. 1 vez por descanso longo."
+        }
+      ]
+    },
+    {
+      "id": "musico",
+      "name": "Músico",
+      "source": "Livro do Jogador",
+      "page": 96,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Desperta emoções com a música.",
+      "save": "Presença",
+      "attribute": "Presença",
+      "attributeBonus": 2,
+      "skillCount": 2,
+      "skills": [
+        "acrobacia",
+        "atuacao",
+        "enganacao",
+        "historia",
+        "intuicao",
+        "percepcao",
+        "persuasao",
+        "prestigitacao",
+        "sorte"
+      ],
+      "equipment": "Kit de disfarce, instrumento, roupa de gala e ¥1.700",
+      "features": [
+        {
+          "name": "Rock Star",
+          "text": "Com 2 horas no início do dia, Sorte com CD do narrador marca um show à noite. Atuação CD 15: cachê de 3d10 × ¥65 (falha: 2d10 × ¥35) mais ¥15 por nível; depois, conta como um dia sem descanso longo. 1 vez por descanso longo."
+        }
+      ]
     },
     {
       "id": "orfao",
       "name": "Órfão",
       "source": "Livro do Jogador",
-      "page": "89–97",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 96,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Cresceu sem família e aprendeu a se virar só.",
+      "save": "Agilidade",
+      "attribute": "Agilidade",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "atletismo",
+        "acrobacia",
+        "enganacao",
+        "furtividade",
+        "intuicao",
+        "percepcao",
+        "prestigitacao",
+        "sobrenatural",
+        "sobrevivencia"
+      ],
+      "equipment": "Roupa simples, bugiganga roubada (até ¥130) e ¥320",
+      "features": [
+        {
+          "name": "Malandragem",
+          "text": "Em centros urbanos, Sorte com CD do narrador acha caminhos secretos e dobra a velocidade de viagem, ou encontra comida e água para você e mais 5 pessoas uma vez por dia."
+        }
+      ]
     },
     {
       "id": "pescador",
       "name": "Pescador",
       "source": "Livro do Jogador",
-      "page": "89–97",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 96,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Resistente, moldado pela vida no mar.",
+      "save": "Constituição",
+      "attribute": "Força",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "atletismo",
+        "acrobacia",
+        "furtividade",
+        "intimidacao",
+        "intuicao",
+        "percepcao",
+        "persuasao",
+        "prestigitacao",
+        "sorte"
+      ],
+      "equipment": "Vara profissional, cantil, iscas e ¥1.350",
+      "features": [
+        {
+          "name": "Rei da Região",
+          "text": "Ao pescar em lago grande ou mar, Sorte CD 16 fisga um peixe gigante (Força 18, teste resistido). Se o puxar, um 20 natural no d20 revela uma espécie nova."
+        }
+      ]
+    },
+    {
+      "id": "soldado",
+      "name": "Soldado",
+      "source": "Livro do Jogador",
+      "page": 97,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Serviu seu país e foi treinado com armas de fogo.",
+      "save": "Constituição",
+      "attribute": "Agilidade",
+      "attributeBonus": 2,
+      "skillCount": 3,
+      "skills": [
+        "atletismo",
+        "acrobacia",
+        "furtividade",
+        "intimidacao",
+        "percepcao",
+        "provocacao",
+        "prestigitacao",
+        "tecnologia"
+      ],
+      "equipment": "Kit de escalada, kit de primeiros socorros, roupa camuflada e ¥850",
+      "features": [
+        {
+          "name": "Peças Sobressalentes",
+          "text": "Sorte CD 17 encontra um estoque com peças de reparo e 3d6 munições. Não funciona no Continente Negro nem em áreas do exame Hunter."
+        }
+      ]
+    },
+    {
+      "id": "vagabundo",
+      "name": "Vagabundo",
+      "source": "Livro do Jogador",
+      "page": 97,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Vagou sem rumo e aprendeu a enganar para sobreviver.",
+      "save": "Espírito",
+      "attribute": "Constituição",
+      "attributeBonus": 2,
+      "skillCount": 2,
+      "skills": [
+        "atletismo",
+        "acrobacia",
+        "furtividade",
+        "pilotagem",
+        "prestigitacao",
+        "ciencia",
+        "historia",
+        "investigacao",
+        "medicina",
+        "natureza",
+        "sobrevivencia",
+        "tecnologia",
+        "atuacao",
+        "enganacao",
+        "intimidacao",
+        "persuasao",
+        "provocacao",
+        "intuicao",
+        "percepcao",
+        "sorte"
+      ],
+      "equipment": "Bugiganga de até ¥3 e ¥130",
+      "features": [
+        {
+          "name": "Sem Tempo Ruim",
+          "text": "Em um lugar ruim para descansar, Sorte CD 16 acha um canto seguro. 1 vez por descanso longo."
+        }
+      ]
     }
   ]
 }

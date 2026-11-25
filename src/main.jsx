@@ -959,6 +959,7 @@ function App() {
                   .map((x, i) => (
                     <article className="entry" key={x.id || i}>
                       <strong>{x.name || x.id}</strong>
+                      {x.summary && <p>{x.summary}</p>}
                       <p>
                         {x.source} · {x.page || '—'}
                       </p>
@@ -975,7 +976,7 @@ function App() {
           <a href={asset('termos.html')}>Termos</a> ·{' '}
           <a href={asset('privacidade.html')}>Privacidade</a>
         </span>
-        <span>v0.6.1 · {cid ? campaign?.name : 'Área pessoal'}</span>
+        <span>v0.7 · {cid ? campaign?.name : 'Área pessoal'}</span>
       </footer>
       {modal?.type === 'profile' && (
         <Profile

@@ -6,105 +6,520 @@
       "id": "hunter-arqueologo",
       "name": "Hunter Arqueólogo",
       "source": "Livro do Jogador",
-      "page": "150–164",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 150,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Decifra línguas, ruínas e relíquias de povos antigos.",
+      "talents": ["Desbravador"],
+      "skillGrants": {
+        "historia": 1
+      },
+      "equipment": "Mochila, lanterna, corda, tenda, livros de história e geografia, chicote, porta-mapas, caderno e kit de escalada",
+      "features": [
+        {
+          "name": "Descoberta Histórica",
+          "text": "Em ruína inexplorada de categoria B ou menor, História CD 16 aumenta em 20% o valor das descobertas.",
+          "evolution": {
+            "single": "30%, até categoria A.",
+            "double": "40%, até categoria S.",
+            "triple": "50% e sempre há um Item de Nen se a exploração tiver sucesso."
+          }
+        },
+        {
+          "name": "Explorador Atento",
+          "text": "Vantagem em testes e salvaguardas de exploração; quem vê seu sucesso também passa depois. Como reação, reduz à metade ou anula um perigo do ambiente (1 por descanso). Com as ferramentas, resolve um enigma ou tranca a cada 5 explorações."
+        },
+        {
+          "name": "Tesouro Valioso",
+          "text": "Ao terminar uma ruína, Investigação CD 24 permite rolar 1d10 na tabela de tesouros (p. 151).",
+          "evolution": {
+            "single": "CD 20.",
+            "double": "CD 18.",
+            "triple": "CD 15; role dois dados e escolha."
+          }
+        }
+      ]
     },
     {
       "id": "hunter-botanico",
       "name": "Hunter Botânico",
       "source": "Livro do Jogador",
-      "page": "150–164",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 152,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Especialista em plantas, de remédios a espécies lendárias.",
+      "talents": ["Botânico"],
+      "skillGrants": {
+        "sobrevivencia": 1
+      },
+      "equipment": "Mochila, livros de plantas, kit de pesquisa e kit de herbalismo",
+      "features": [
+        {
+          "name": "Biotecnologia",
+          "text": "Com instalação e 1 kit de pesquisa, Sobrevivência CD 23 descobre 3 usos de uma planta ou a cultiva em outro ambiente.",
+          "evolution": {
+            "single": "CD 20.",
+            "double": "CD 18.",
+            "triple": "CD 14."
+          }
+        },
+        {
+          "name": "Ervas Medicinais",
+          "text": "Com 1 kit de pesquisa, ¥6.000 e 8 horas, Sobrevivência CD 20 cria misturas (até o bônus de proficiência): remove 1 exaustão, +3 m por 1 minuto, remove uma condição de até 3 PA ou cura 5 × mod. de Constituição.",
+          "evolution": {
+            "single": "CD 18 e ¥2.000.",
+            "double": "CD 16 e ¥1.000.",
+            "triple": "CD 12 e ¥350."
+          }
+        }
+      ]
     },
     {
       "id": "hunter-caca-talentos",
       "name": "Hunter Caça Talentos",
       "source": "Livro do Jogador",
-      "page": "150–164",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 153,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Encontra pessoas talentosas por uma rede de contatos. Precisa do triplo de missões para subir de rank.",
+      "talents": [],
+      "skillGrants": {
+        "enganacao": 1,
+        "persuasao": 1
+      },
+      "equipment": "Mochila, livros de psicologia e perfis, celular, caderno e laptop",
+      "features": [
+        {
+          "name": "Chantagem",
+          "text": "Gastando ¥5.000, teste de Sabedoria CD 20 pode achar algo comprometedor; o alvo coopera em maior ou menor grau, a critério do narrador.",
+          "evolution": {
+            "single": "CD −2.",
+            "double": "CD −4.",
+            "triple": "CD −6."
+          }
+        },
+        {
+          "name": "Buscar Talento",
+          "text": "Investigação com CD da tabela (12 a 26, p. 153) localiza um profissional, hunter ou habilidade. O valor é gasto mesmo na falha; nova busca após 3 dias.",
+          "evolution": {
+            "single": "CD −2.",
+            "double": "CD −4.",
+            "triple": "CD −6."
+          }
+        }
+      ]
     },
     {
       "id": "hunter-criminal",
       "name": "Hunter Criminal",
       "source": "Livro do Jogador",
-      "page": "150–164",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 154,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Desvenda crimes e encontra desaparecidos por dedução.",
+      "talents": ["Alvo Marcado", "Rastreador"],
+      "skillGrants": {},
+      "equipment": "Mochila, livros de psicologia e geografia, GPS, celular, câmera, cantil e mapa-múndi",
+      "features": [
+        {
+          "name": "Rastreio Lógico",
+          "text": "Intuição CD 15, 20 ou 30, conforme as pistas, aponta 1 continente e 3 locais prováveis do alvo; na mesma cidade, uma área de 1 km.",
+          "evolution": {
+            "single": "Sempre com vantagem.",
+            "double": "Recebe a última cidade em que ele foi visto.",
+            "triple": "Recebe uma área de 20 km²."
+          }
+        },
+        {
+          "name": "Lógica Afiada",
+          "text": "Em um local frequentado pelo alvo ou cena de crime, Intuição CD 23 refaz a cena.",
+          "evolution": {
+            "single": "CD 21.",
+            "double": "CD 18.",
+            "triple": "CD 12."
+          }
+        }
+      ]
     },
     {
       "id": "hunter-gourmet",
       "name": "Hunter Gourmet",
       "source": "Livro do Jogador",
-      "page": "150–164",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 155,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Busca ingredientes raros sem prejudicar o ecossistema.",
+      "talents": ["Chefe de Cozinha"],
+      "skillGrants": {
+        "sobrevivencia": 1
+      },
+      "equipment": "Mochila, livros de gastronomia, kit de cozinha, 3 kits de temperos e roupa de gala",
+      "features": [
+        {
+          "name": "Preparo Perfeito",
+          "text": "Com ingrediente incomum, Prestidigitação ou Intuição CD 16 ativa seus benefícios especiais.",
+          "evolution": {
+            "single": "Ingredientes raros.",
+            "double": "Ingredientes muito raros.",
+            "triple": "Ingredientes lendários."
+          }
+        },
+        {
+          "name": "Olho Gourmet",
+          "text": "Sobrevivência ou Intuição CD 18 diz se planta, fungo ou criatura serve de ingrediente."
+        },
+        {
+          "name": "Nutrição Perfeita",
+          "text": "Sobrevivência ou Prestidigitação CD 25: quem come recupera todos os dados de aura no descanso longo.",
+          "evolution": {
+            "single": "CD 22.",
+            "double": "CD 19.",
+            "triple": "CD 16."
+          }
+        }
+      ]
     },
     {
       "id": "hunter-jackpot",
       "name": "Hunter Jackpot",
       "source": "Livro do Jogador",
-      "page": "150–164",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 156,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Persegue tesouros e trabalhos bem pagos.",
+      "talents": ["Avaliação"],
+      "skillGrants": {
+        "historia": 1
+      },
+      "equipment": "Mochila, livros de economia e tesouros, lanterna, cantil e catálogo de leilões",
+      "features": [
+        {
+          "name": "Geografia Avançada",
+          "text": "Sobrevivência CD 22 para localizar um lugar conhecido por nome e aparência (CD 28 fixa no Continente Negro).",
+          "evolution": {
+            "single": "CD −2.",
+            "double": "CD −4.",
+            "triple": "CD −8."
+          }
+        },
+        {
+          "name": "Tesouro Perdido",
+          "text": "Ao ouvir sobre algo de valor, Sorte CD 20, somando a proficiência, rende informações do narrador.",
+          "evolution": {
+            "single": "CD 18.",
+            "double": "CD 16.",
+            "triple": "CD 12."
+          }
+        },
+        {
+          "name": "Negociação",
+          "text": "Persuasão com CD do narrador aumenta o contrato em 10%.",
+          "evolution": {
+            "single": "20%.",
+            "double": "30%.",
+            "triple": "50%."
+          }
+        }
+      ]
     },
     {
       "id": "hunter-lista-negra",
       "name": "Hunter Lista Negra",
       "source": "Livro do Jogador",
-      "page": "150–164",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 157,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Rastreia procurados e negocia com qualquer organização.",
+      "talents": ["Alvo Marcado"],
+      "skillGrants": {
+        "intimidacao": 1
+      },
+      "equipment": "Mochila, livros de comportamento, 3 kits de primeiros socorros, 2 cordas, 2 algemas e bússola",
+      "features": [
+        {
+          "name": "Encontrar um Alvo",
+          "text": "Teste de Sabedoria: pessoa comum 12, figura pública 14, procurado 16, identidade oculta 25 ou entidade 30. Repete a cada 2 dias ou nova pista, com CD −2 por tentativa. Custa de ¥250 a ¥5.000.",
+          "evolution": {
+            "single": "CD −2.",
+            "double": "CD −4.",
+            "triple": "CD −8."
+          }
+        },
+        {
+          "name": "Contatos",
+          "text": "Sorte CD 18: um contato informa a localização geral do alvo, por 15% do valor da captura."
+        }
+      ]
     },
     {
       "id": "hunter-maritimo",
       "name": "Hunter Marítimo",
       "source": "Livro do Jogador",
-      "page": "150–164",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 158,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Explora os mares, naufrágios e criaturas marinhas.",
+      "talents": ["Pulmão de Aço"],
+      "skillGrants": {
+        "sobrevivencia": 1
+      },
+      "equipment": "Mochila, livros de astronomia e navegação, bússola, compasso, balestilha e astrolábio",
+      "features": [
+        {
+          "name": "Navegação Avançada",
+          "text": "Sobrevivência CD 15 para navegar (+10 com mar agitado, +20 perto do Continente Negro).",
+          "evolution": {
+            "single": "CD 10.",
+            "double": "CD 5.",
+            "triple": "Os adicionais caem à metade."
+          }
+        },
+        {
+          "name": "Corpo de Nadador",
+          "text": "Mergulha até 100 m sem sofrer com a mudança de pressão.",
+          "evolution": {
+            "single": "150 m.",
+            "double": "250 m.",
+            "triple": "450 m, ou 1 minuto a 800 m usando aura."
+          }
+        },
+        {
+          "name": "Tesouro do Oceano",
+          "text": "Abaixo de 60 m, Investigação ou Sorte CD 35 (25 com coordenadas) acha um naufrágio. 1 vez a cada 30 dias por região de 100 km."
+        }
+      ]
     },
     {
       "id": "hunter-medico",
       "name": "Hunter Médico",
       "source": "Livro do Jogador",
-      "page": "150–164",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 159,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Cura ferimentos e doenças, até as desconhecidas.",
+      "talents": [],
+      "skillGrants": {
+        "medicina": 2
+      },
+      "equipment": "Mochila, livros de anatomia e bioquímica, kit médico e 3 kits de primeiros socorros",
+      "features": [
+        {
+          "name": "Cirurgia",
+          "text": "Em local apropriado, Sabedoria (Medicina) CD 20 reverte danos brutais (tabela p. 159). A CD cai pelo mod. de Constituição do paciente e sobe 1 por dia sem tratamento.",
+          "evolution": {
+            "single": "CD 18.",
+            "double": "CD 16.",
+            "triple": "CD 12."
+          }
+        },
+        {
+          "name": "Tratar Ferimentos",
+          "text": "Tem 2d6 curativos por nível, recuperados no descanso longo, para usar fora de combate. O paciente recupera no máximo 8 × nível em PV entre descansos longos.",
+          "evolution": {
+            "single": "3 dados por nível, um passo maior.",
+            "double": "4 dados por nível, mais um passo.",
+            "triple": "5 dados por nível, mais um passo."
+          }
+        },
+        {
+          "name": "Tratar Doenças",
+          "text": "Após 1 minuto de análise, uma ação suspende os sintomas por 24 h. Doenças específicas pedem CD 22; as comuns, CD 16.",
+          "evolution": {
+            "single": "CD 20.",
+            "double": "CD 18.",
+            "triple": "CD 14."
+          }
+        }
+      ]
     },
     {
       "id": "hunter-musical",
       "name": "Hunter Musical",
       "source": "Livro do Jogador",
-      "page": "150–164",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 161,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Move multidões com música e preserva as artes.",
+      "talents": [],
+      "skillGrants": {
+        "atuacao": 2
+      },
+      "equipment": "Mochila, livros de canto e partituras e um instrumento",
+      "features": [
+        {
+          "name": "Talento de Artista",
+          "text": "Imune a Sonolento, proficiente em todo instrumento e com vantagem em Percepção ligada à audição."
+        },
+        {
+          "name": "Espetáculo",
+          "text": "Com uma ação por turno, atrai ou repele criaturas escolhidas a até 18 m, por até 1 hora. Salvaguarda de Presença CD 8 + proficiência + mod. de Presença. Usos iguais à proficiência por descanso longo."
+        }
+      ]
     },
     {
       "id": "hunter-selvagem",
       "name": "Hunter Selvagem",
       "source": "Livro do Jogador",
-      "page": "150–164",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 162,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Protege bestas mágicas e animais ameaçados.",
+      "talents": [],
+      "skillGrants": {
+        "sobrevivencia": 2
+      },
+      "equipment": "Mochila, 30 rações, livros de veterinária, apito, kit médico e 3 kits de primeiros socorros",
+      "features": [
+        {
+          "name": "Tratamento de Emergência",
+          "text": "Gastando 2 kits de primeiros socorros, Sobrevivência cura 3d10 PV de uma criatura (metade em humanos), 1 vez por criatura a cada descanso longo.",
+          "evolution": {
+            "single": "5d12.",
+            "double": "8d12.",
+            "triple": "12d12."
+          }
+        },
+        {
+          "name": "Amigo dos Animais",
+          "text": "Animais e monstros de ND até seu nível não são hostis em situações normais. Ao atacá-los para ferir, você tem desvantagem e eles têm vantagem.",
+          "evolution": {
+            "single": "ND até nível +2.",
+            "double": "ND até nível +4.",
+            "triple": "ND até nível +8."
+          }
+        },
+        {
+          "name": "Comunicação Amistosa",
+          "text": "Em 30 dias cria uma linguagem com um animal de ND 8 ou menor.",
+          "evolution": {
+            "single": "25 dias, ND 10.",
+            "double": "15 dias, ND 12.",
+            "triple": "5 dias, ND 20."
+          }
+        }
+      ]
     },
     {
       "id": "hunter-tecnico",
       "name": "Hunter Técnico",
       "source": "Livro do Jogador",
-      "page": "150–164",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 163,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Desenvolve tecnologia e domina o mundo digital.",
+      "talents": [],
+      "skillGrants": {
+        "tecnologia": 2
+      },
+      "equipment": "Mochila, livros de mecânica, física e computação, martelo, kit de chaves e minicomputador",
+      "features": [
+        {
+          "name": "Criação de Equipamento",
+          "text": "Com esquema e metade do preço, teste do kit de construção: munição 12, cortante 15, especial 16, fogo 20, fogo avançada 25. O item recebe +1 de acerto corpo a corpo e +3 de alcance à distância.",
+          "evolution": {
+            "single": "+2 e 6 m.",
+            "double": "+3 e 12 m.",
+            "triple": "Mais uma propriedade da categoria."
+          }
+        },
+        {
+          "name": "Acesso Livre",
+          "text": "Tecnologia CD 25 acessa informações um nível acima da sua licença.",
+          "evolution": {
+            "single": "CD 20.",
+            "double": "CD 16.",
+            "triple": "CD 12."
+          }
+        }
+      ]
     },
     {
       "id": "hunter-toxico",
       "name": "Hunter Tóxico",
       "source": "Livro do Jogador",
-      "page": "150–164",
-      "status": "catalogado",
-      "automation": "manual"
+      "page": 164,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Usa venenos tanto para ferir quanto para curar.",
+      "talents": ["Resistência a Venenos", "Mestre de Toxinas"],
+      "skillGrants": {},
+      "equipment": "O livro repete as ferramentas do Técnico (p. 149); confirme com o narrador",
+      "features": [
+        {
+          "name": "Criador de Toxinas",
+          "text": "Proficiência em kit de veneno. Com ¥700, 1 kit de pesquisa e 4 horas, Sobrevivência CD 20 cria 1d10 frascos de veneno básico.",
+          "evolution": {
+            "single": "CD 18.",
+            "double": "CD 16 e +1d10 frascos.",
+            "triple": "CD 12 e mais +1d10 frascos."
+          }
+        },
+        {
+          "name": "Mistura Milagrosa",
+          "text": "Gastando 1d6 frascos: suspende uma doença por 24 h, dá 3d10 + 10 PV temporários, remove venenos em 1 minuto ou encerra uma condição de Constituição que não seja de Nen.",
+          "evolution": {
+            "single": "5d10 + 20 PV temporários.",
+            "double": "8d10 + 30 PV temporários.",
+            "triple": "Remove venenos como reação."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sem-classe",
+      "name": "Sem Classe",
+      "source": "Livro do Jogador",
+      "page": 146,
+      "status": "revisado",
+      "automation": "automatico",
+      "summary": "Dedica-se ao Nen e a várias áreas sem se especializar. Não pode aprender nenhuma classe depois.",
+      "talents": [],
+      "skillGrants": {},
+      "skillCount": 2,
+      "skills": [
+        "atletismo",
+        "acrobacia",
+        "furtividade",
+        "pilotagem",
+        "prestigitacao",
+        "ciencia",
+        "historia",
+        "investigacao",
+        "medicina",
+        "natureza",
+        "sobrevivencia",
+        "tecnologia",
+        "atuacao",
+        "enganacao",
+        "intimidacao",
+        "persuasao",
+        "provocacao",
+        "nen",
+        "intuicao",
+        "percepcao",
+        "sobrenatural",
+        "sorte"
+      ],
+      "equipment": "",
+      "noLicenseBenefits": true,
+      "features": [
+        {
+          "name": "Ajudante Perfeito",
+          "text": "Ajuda em um teste de atributo com +5 (em combate, usa a ação Ajudar). 3 vezes por descanso longo."
+        },
+        {
+          "name": "Aprimoramento Pessoal",
+          "text": "No 16º e no 19º níveis, aumente um atributo em 1, até 20. Aplique à mão."
+        },
+        {
+          "name": "Foco Objetivo",
+          "text": "Proficiência em 2 perícias à escolha."
+        },
+        {
+          "name": "Evolução",
+          "text": "Precisa do triplo de missões. A promoção só libera acesso a informações, sem os outros benefícios da licença."
+        }
+      ]
     }
   ]
 }

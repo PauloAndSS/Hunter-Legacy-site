@@ -1,4 +1,4 @@
-# Hunter Legacy — Mesa RPG (v0.6)
+# Hunter Legacy — Mesa RPG (v0.7)
 
 Mesa virtual para o RPG **Hunter Legacy**: fichas, campanhas, combate em tempo real e biblioteca.
 Feita com React, Vite e Supabase.
@@ -190,7 +190,13 @@ protege os dados são as políticas RLS do banco.
 - Se a campanha for excluída, as cópias viram fichas pessoais, mesmo acima do limite de 5.
 - Remova o token do combate antes de remover a ficha da campanha. Ela pode ser
   editada durante o combate; PV e condições do encontro continuam no token.
-- A ficha abre em leitura com rolagens; a edição é explícita.
+- A ficha abre em leitura com rolagens. **✎ Editar** usa a mesma tela, com os campos no lugar.
+- **Origem e classe Hunter:** a aba própria descreve o que cada uma faz, com a página do livro. Ao
+  escolher, a ficha aplica sozinha o +2 de atributo (até 20), a salvaguarda e as perícias; trocar
+  desfaz o bônus anterior. Fichas antigas só recebem os benefícios se você ligar a opção na aba, para
+  não somar duas vezes.
+- A licença (Amador a 3 estrelas) destaca a evolução atual de cada característica.
+- **Continuam manuais:** talentos, testes, dinheiro, equipamento e Pontos de Nen.
 - **Conteúdo:** PV, PVE e PA atuais e máximos, resistência, nível, seis atributos, perícias,
   salvaguardas, técnicas e notas.
 - **Fórmulas:** modificador e proficiência 1–20 do livro, com maestria em perícias.
@@ -270,11 +276,13 @@ src/
 ├── main.jsx                    Sessão, contexto de campanha, consultas e navegação
 ├── rules.js                    Catálogos, fórmulas e normalização da ficha
 ├── db.js                       Cliente Supabase
+├── auto.js                     Benefícios automáticos de origem e classe
 ├── assets.js                   Caminhos de arquivos públicos
 ├── discord.js                  Nome e foto vindos do Discord
 ├── style.css, v03.css          Estilos
 ├── components/
 │   ├── Auth.jsx                Entrada com o Discord
+│   ├── Background.jsx          Descrição e escolhas de origem e classe
 │   ├── Sheet.jsx               Ficha, criação, edição e rolagens
 │   ├── Combat.jsx              Combate e iniciativa
 │   ├── BattleCanvas.jsx        Tabuleiro e ferramentas de medida
@@ -286,7 +294,7 @@ src/
 
 public/      Imagens e livros
 supabase/    Scripts SQL: RLS, Storage, cotas, rolagens e combate
-tests/       Testes de geometria e perfil
+tests/       Testes de geometria, perfil e benefícios
 docs/        Documentação de produto e arquitetura
 ```
 
@@ -306,7 +314,8 @@ docs/        Documentação de produto e arquitetura
 
 ## Testes
 
-`npm test` valida a geometria do tabuleiro e a leitura do perfil do Discord.
+`npm test` valida a geometria do tabuleiro, a leitura do perfil do Discord e os benefícios de origem e
+classe.
 
 ### Roteiro de aceitação (duas contas)
 

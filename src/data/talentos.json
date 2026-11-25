@@ -1,5 +1,87 @@
 {
   "ruleset": "hunter-legacy-3.0.1",
   "catalog": "talentos",
-  "entries": []
+  "entries": [
+    {
+      "id": "desbravador",
+      "name": "Desbravador",
+      "source": "Livro do Jogador",
+      "page": 110,
+      "status": "revisado",
+      "automation": "manual",
+      "summary": "Proficiência em ferramentas de arqueólogo e desarma armadilhas com Prestidigitação (CD do narrador)."
+    },
+    {
+      "id": "botanico",
+      "name": "Botânico",
+      "source": "Livro do Jogador",
+      "page": 109,
+      "status": "revisado",
+      "automation": "manual",
+      "summary": "+2 em testes e salvaguardas ligados a plantas. Com ¥150 em ervas, estabiliza e cura 1d10 PV (1 vez por dia por criatura)."
+    },
+    {
+      "id": "alvo-marcado",
+      "name": "Alvo Marcado",
+      "source": "Livro do Jogador",
+      "page": 108,
+      "status": "revisado",
+      "automation": "manual",
+      "summary": "Conhecendo nome, idade, gênero e aparência, tem vantagem em testes para rastrear o alvo."
+    },
+    {
+      "id": "rastreador",
+      "name": "Rastreador",
+      "source": "Livro do Jogador",
+      "page": 111,
+      "status": "revisado",
+      "automation": "manual",
+      "summary": "Vantagem em Sobrevivência para seguir pegadas e rastros."
+    },
+    {
+      "id": "chefe-de-cozinha",
+      "name": "Chefe de Cozinha",
+      "source": "Livro do Jogador",
+      "page": 109,
+      "status": "revisado",
+      "automation": "manual",
+      "summary": "Proficiência em kit de cozinha; quem come recupera 2d6 PA no fim de um descanso."
+    },
+    {
+      "id": "avaliacao",
+      "name": "Avaliação",
+      "source": "Livro do Jogador",
+      "page": 108,
+      "status": "revisado",
+      "automation": "manual",
+      "summary": "Intuição CD 16 revela o valor real de um item."
+    },
+    {
+      "id": "pulmao-de-aco",
+      "name": "Pulmão de Aço",
+      "source": "Livro do Jogador",
+      "page": 111,
+      "status": "revisado",
+      "automation": "manual",
+      "summary": "Prende a respiração por 15 minutos × mod. de Constituição, até 2 horas."
+    },
+    {
+      "id": "resistencia-a-venenos",
+      "name": "Resistência a Venenos",
+      "source": "Livro do Jogador",
+      "page": 112,
+      "status": "revisado",
+      "automation": "manual",
+      "summary": "Vantagem em salvaguardas contra venenos; se já tiver vantagem, +5."
+    },
+    {
+      "id": "mestre-de-toxinas",
+      "name": "Mestre de Toxinas",
+      "source": "Livro do Jogador",
+      "page": 111,
+      "status": "revisado",
+      "automation": "manual",
+      "summary": "Proficiência em kit de venenos e usa a própria CD ao envenenar."
+    }
+  ]
 }
