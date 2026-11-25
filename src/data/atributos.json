@@ -1,0 +1,54 @@
+{
+  "ruleset": "hunter-legacy-3.0.1",
+  "catalog": "atributos",
+  "entries": [
+    {
+      "id": "forca",
+      "name": "Força",
+      "source": "Livro do Jogador",
+      "page": 7,
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "agilidade",
+      "name": "Agilidade",
+      "source": "Livro do Jogador",
+      "page": 7,
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "constituicao",
+      "name": "Constituição",
+      "source": "Livro do Jogador",
+      "page": 7,
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "sabedoria",
+      "name": "Sabedoria",
+      "source": "Livro do Jogador",
+      "page": 7,
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "espirito",
+      "name": "Espírito",
+      "source": "Livro do Jogador",
+      "page": 7,
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "presenca",
+      "name": "Presença",
+      "source": "Livro do Jogador",
+      "page": 7,
+      "status": "catalogado",
+      "automation": "manual"
+    }
+  ]
+}

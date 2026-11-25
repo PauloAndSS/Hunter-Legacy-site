@@ -1,0 +1,118 @@
+{
+  "ruleset": "hunter-legacy-3.0.1",
+  "catalog": "origens",
+  "entries": [
+    {
+      "id": "acompanhante",
+      "name": "Acompanhante",
+      "source": "Livro do Jogador",
+      "page": "89–97",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "aprendiz-marcial",
+      "name": "Aprendiz Marcial",
+      "source": "Livro do Jogador",
+      "page": "89–97",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "ator",
+      "name": "Ator",
+      "source": "Livro do Jogador",
+      "page": "89–97",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "comerciante",
+      "name": "Comerciante",
+      "source": "Livro do Jogador",
+      "page": "89–97",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "cozinheiro",
+      "name": "Cozinheiro",
+      "source": "Livro do Jogador",
+      "page": "89–97",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "engenheiro",
+      "name": "Engenheiro",
+      "source": "Livro do Jogador",
+      "page": "89–97",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "explorador",
+      "name": "Explorador",
+      "source": "Livro do Jogador",
+      "page": "89–97",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "hacker",
+      "name": "Hacker",
+      "source": "Livro do Jogador",
+      "page": "89–97",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "iniciado-em-medicina",
+      "name": "Iniciado em Medicina",
+      "source": "Livro do Jogador",
+      "page": "89–97",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "ladrao",
+      "name": "Ladrão",
+      "source": "Livro do Jogador",
+      "page": "89–97",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "marujo",
+      "name": "Marujo",
+      "source": "Livro do Jogador",
+      "page": "89–97",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "monge",
+      "name": "Monge",
+      "source": "Livro do Jogador",
+      "page": "89–97",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "orfao",
+      "name": "Órfão",
+      "source": "Livro do Jogador",
+      "page": "89–97",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "pescador",
+      "name": "Pescador",
+      "source": "Livro do Jogador",
+      "page": "89–97",
+      "status": "catalogado",
+      "automation": "manual"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "ruleset": "hunter-legacy-3.0.1",
+  "catalog": "especies",
+  "entries": [
+    {
+      "id": "formiga-quimera",
+      "name": "Formiga Quimera",
+      "source": "Livro do Jogador",
+      "page": "17–25",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "humano",
+      "name": "Humano",
+      "source": "Livro do Jogador",
+      "page": "17–25",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "kiriko",
+      "name": "Kiriko",
+      "source": "Livro do Jogador",
+      "page": "17–25",
+      "status": "catalogado",
+      "automation": "manual"
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "ruleset": "hunter-legacy-3.0.1",
+  "catalog": "hatsus_modelo",
+  "entries": [
+    {
+      "id": "dissonance",
+      "name": "Dissonance",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "100-type-guanyin-bodhisattva",
+      "name": "100-Type Guanyin Bodhisattva",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "bless-of-the-sun",
+      "name": "Bless of the Sun",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "reborn",
+      "name": "Reborn",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "boogie-woogie",
+      "name": "Boogie Woogie",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "fireworks",
+      "name": "Fireworks",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "hide-and-seek",
+      "name": "Hide and Seek",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "nine-dragon-forms",
+      "name": "Nine Dragon Forms",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "kaminari-no-ko",
+      "name": "Kaminari no Ko",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "ouroboros",
+      "name": "Ouroboros",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "spiritual-weaver",
+      "name": "Spiritual Weaver",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "gods-slave",
+      "name": "God’s Slave",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "hakoware",
+      "name": "Hakoware",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "heaven-dice",
+      "name": "Heaven Dice",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "tech-ranger",
+      "name": "Tech Ranger",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "black-voice",
+      "name": "Black Voice",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "thousand-needles",
+      "name": "Thousand Needles",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "skill-hunter",
+      "name": "Skill Hunter",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "dark-djinn",
+      "name": "Dark Djinn",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "parallel-future",
+      "name": "Parallel Future",
+      "source": "Manual Shingen-Ryu",
+      "page": "80–120",
+      "status": "catalogado",
+      "automation": "manual"
+    }
+  ]
+}

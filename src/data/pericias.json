@@ -1,0 +1,226 @@
+{
+  "ruleset": "hunter-legacy-3.0.1",
+  "catalog": "pericias",
+  "entries": [
+    {
+      "id": "atletismo",
+      "name": "Atletismo",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL6",
+      "attribute": "FOR"
+    },
+    {
+      "id": "acrobacia",
+      "name": "Acrobacia",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL7",
+      "attribute": "AGI"
+    },
+    {
+      "id": "furtividade",
+      "name": "Furtividade",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL8",
+      "attribute": "AGI"
+    },
+    {
+      "id": "pilotagem",
+      "name": "Pilotagem",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL9",
+      "attribute": "AGI"
+    },
+    {
+      "id": "prestigitacao",
+      "name": "Prestigitação",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL10",
+      "attribute": "AGI"
+    },
+    {
+      "id": "ciencia",
+      "name": "Ciência",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL11",
+      "attribute": "SAB"
+    },
+    {
+      "id": "historia",
+      "name": "História",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL12",
+      "attribute": "SAB"
+    },
+    {
+      "id": "investigacao",
+      "name": "Investigação",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL13",
+      "attribute": "SAB"
+    },
+    {
+      "id": "medicina",
+      "name": "Medicina",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL14",
+      "attribute": "SAB"
+    },
+    {
+      "id": "natureza",
+      "name": "Natureza",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL15",
+      "attribute": "SAB"
+    },
+    {
+      "id": "sobrevivencia",
+      "name": "Sobrevivência",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL16",
+      "attribute": "SAB"
+    },
+    {
+      "id": "tecnologia",
+      "name": "Tecnologia",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL17",
+      "attribute": "SAB"
+    },
+    {
+      "id": "atuacao",
+      "name": "Atuação",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL18",
+      "attribute": "PRE"
+    },
+    {
+      "id": "enganacao",
+      "name": "Enganação",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL19",
+      "attribute": "PRE"
+    },
+    {
+      "id": "intimidacao",
+      "name": "Intimidação",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL20",
+      "attribute": "PRE"
+    },
+    {
+      "id": "persuasao",
+      "name": "Persuasão",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL21",
+      "attribute": "PRE"
+    },
+    {
+      "id": "provocacao",
+      "name": "Provocação",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL22",
+      "attribute": "PRE"
+    },
+    {
+      "id": "nen",
+      "name": "Nen",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL23",
+      "attribute": "ESP"
+    },
+    {
+      "id": "intuicao",
+      "name": "Intuição",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL24",
+      "attribute": "ESP"
+    },
+    {
+      "id": "percepcao",
+      "name": "Percepção",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL25",
+      "attribute": "ESP"
+    },
+    {
+      "id": "sobrenatural",
+      "name": "Sobrenatural",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL26",
+      "attribute": "ESP"
+    },
+    {
+      "id": "sorte",
+      "name": "Sorte",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "Valores!AL27",
+      "attribute": "ESP"
+    }
+  ]
+}

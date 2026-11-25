@@ -1,0 +1,186 @@
+{
+  "ruleset": "hunter-legacy-3.0.1",
+  "catalog": "dominios_aura",
+  "entries": [
+    {
+      "id": "mestre-aprimorador",
+      "name": "Mestre Aprimorador",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L2",
+      "category": "Aprimorador"
+    },
+    {
+      "id": "aprimorador-de-emissao",
+      "name": "Aprimorador de Emissão",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L3",
+      "category": "Aprimorador"
+    },
+    {
+      "id": "aprimorador-mutavel",
+      "name": "Aprimorador Mutável",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L4",
+      "category": "Aprimorador"
+    },
+    {
+      "id": "mestre-transmutador",
+      "name": "Mestre Transmutador",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L5",
+      "category": "Transmutador"
+    },
+    {
+      "id": "aprimorador-mutavel-ref-l6",
+      "name": "Aprimorador Mutável",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L6",
+      "category": "Transmutador"
+    },
+    {
+      "id": "conjurador-mutavel",
+      "name": "Conjurador Mutável",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L7",
+      "category": "Transmutador"
+    },
+    {
+      "id": "mestre-emissor",
+      "name": "Mestre Emissor",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L8",
+      "category": "Emissor"
+    },
+    {
+      "id": "aprimorador-de-emissao-ref-l9",
+      "name": "Aprimorador de Emissão",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L9",
+      "category": "Emissor"
+    },
+    {
+      "id": "emissor-de-controle",
+      "name": "Emissor de Controle",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L10",
+      "category": "Emissor"
+    },
+    {
+      "id": "mestre-conjurador",
+      "name": "Mestre Conjurador",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L11",
+      "category": "Conjurador"
+    },
+    {
+      "id": "conjurador-mutavel-ref-l12",
+      "name": "Conjurador Mutável",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L12",
+      "category": "Conjurador"
+    },
+    {
+      "id": "conjurador-especialista",
+      "name": "Conjurador Especialista",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L13",
+      "category": "Conjurador"
+    },
+    {
+      "id": "mestre-manipulador",
+      "name": "Mestre Manipulador",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L14",
+      "category": "Manipulador"
+    },
+    {
+      "id": "emissor-de-controle-ref-l15",
+      "name": "Emissor de Controle",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L15",
+      "category": "Manipulador"
+    },
+    {
+      "id": "manipulador-especialista",
+      "name": "Manipulador Especialista",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L16",
+      "category": "Manipulador"
+    },
+    {
+      "id": "mestre-especialista",
+      "name": "Mestre Especialista",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L17",
+      "category": "Especialista"
+    },
+    {
+      "id": "manipulador-especialista-ref-l18",
+      "name": "Manipulador Especialista",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L18",
+      "category": "Especialista"
+    },
+    {
+      "id": "conjurador-especialista-ref-l19",
+      "name": "Conjurador Especialista",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!L19",
+      "category": "Especialista"
+    }
+  ]
+}

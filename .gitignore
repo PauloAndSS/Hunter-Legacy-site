@@ -1,0 +1,16 @@
+# Dependências e build
+node_modules/
+dist/
+
+# Credenciais locais
+.env
+.env.*
+!.env.example
+
+# Editor, sistema e logs
+.claude/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

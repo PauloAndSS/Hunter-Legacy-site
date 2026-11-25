@@ -1,0 +1,325 @@
+.bc-root {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: #233c32;
+  color: #f5ead1;
+  min-width: 0;
+  border: 1px solid #587361;
+  border-radius: 12px;
+  box-shadow: 0 5px 16px #12291d30;
+}
+.bc-root button {
+  background: #344f41;
+  color: #f5ead1;
+  border: 1px solid #6b8069;
+  border-radius: 6px;
+  font-size: 12px;
+  padding: 6px 9px;
+  min-height: 34px;
+  white-space: nowrap;
+  box-shadow: none;
+}
+.bc-root button:hover:not(:disabled) {
+  background: #496853;
+  border-color: #d8bb72;
+}
+.bc-root button.active,
+.bc-root button[aria-pressed='true'] {
+  background: #d8bb72;
+  color: #1b3328;
+  border-color: #f0dba3;
+}
+.bc-root button:focus-visible,
+.bc-root svg:focus-visible {
+  outline: 2px solid #f1d38a;
+  outline-offset: 2px;
+}
+.bc-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.bc-title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.bc-meta {
+  font-size: 11px;
+  color: #b9c9b4;
+  margin-left: auto;
+}
+.bc-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+}
+.bc-toolgroup {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 3px;
+  border: 1px solid #4b6554;
+  border-radius: 8px;
+  background: #1c342a;
+}
+.bc-toolgroup button {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+.bc-toolgroup b {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1;
+}
+.bc-camera span {
+  font-size: 11px;
+  min-width: 38px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.bc-camera button {
+  min-width: 32px;
+}
+.bc-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: #c7d3bd;
+  font-size: 11px;
+}
+.bc-options label {
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  font-weight: 400;
+  gap: 6px;
+}
+.bc-options label input {
+  accent-color: #d8bb72;
+}
+.bc-options button {
+  margin-left: auto;
+  min-height: 26px;
+  padding: 4px 8px;
+  font-size: 11px;
+}
+.bc-viewport {
+  display: block;
+  width: 100%;
+  height: clamp(360px, 65vh, 760px);
+  min-height: 0;
+  max-width: none;
+  border: 1px solid #728774;
+  border-radius: 8px;
+  background: #192e28;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+  overflow: hidden;
+  flex: none;
+}
+.bc-viewport.panning {
+  cursor: grabbing;
+}
+.bc-viewport.tool-ruler,
+.bc-viewport.tool-cone,
+.bc-viewport.tool-area,
+.bc-viewport.tool-circle,
+.bc-viewport.tool-rect,
+.bc-viewport.tool-line {
+  cursor: crosshair;
+}
+.bc-token {
+  cursor: pointer;
+  outline: none;
+}
+.bc-token.movable,
+.bc-shape.editable,
+.bc-measure-body {
+  cursor: grab;
+}
+.bc-token:focus-visible > circle:first-of-type {
+  stroke: #fff3c2;
+  stroke-width: 4;
+}
+.bc-token image,
+.bc-token text {
+  pointer-events: none;
+}
+.bc-token-label,
+.bc-shape-label {
+  fill: #fff7df;
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: #1a3027;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+.bc-shape-label {
+  font-weight: 600;
+}
+.bc-handle {
+  cursor: move;
+}
+.bc-viewport.tool-pan * {
+  cursor: grab !important;
+}
+.bc-viewport.panning * {
+  cursor: grabbing !important;
+}
+.bc-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  color: #dfecd9;
+  font-size: 12px;
+  min-height: 20px;
+}
+.bc-footer small {
+  color: #aebfac;
+  font-size: 10px;
+}
+.bc-object-edit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid #6b8069;
+  background: #1c342a;
+  border-radius: 8px;
+}
+.bc-object-edit label {
+  flex-direction: column;
+  color: #e7e8d4;
+  font-size: 11px;
+  gap: 4px;
+}
+.bc-object-edit label:first-child {
+  flex: 1 1 150px;
+}
+.bc-object-edit input {
+  min-height: 34px;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 13px;
+}
+.bc-object-edit input[type='color'] {
+  width: 44px;
+  height: 34px;
+  padding: 3px;
+  cursor: pointer;
+}
+.bc-object-dim {
+  font-size: 11px;
+  color: #dfd1ac;
+  padding: 8px 0;
+}
+.bc-root .bc-delete {
+  color: #ffd5c8;
+  border-color: #a97868;
+  background: #653d34;
+}
+.bc-full {
+  position: fixed !important;
+  inset: 10px;
+  z-index: 85;
+  box-shadow: 0 0 0 20px #102820d9;
+  overflow: hidden;
+  min-height: 0;
+}
+.bc-full .bc-viewport {
+  height: auto;
+  flex: 1 1 0;
+  min-height: 120px;
+}
+.bc-full .bc-top,
+.bc-full .bc-toolbar,
+.bc-full .bc-options,
+.bc-full .bc-footer,
+.bc-full .bc-object-edit {
+  flex: none;
+}
+@media (max-width: 760px) {
+  .bc-root {
+    padding: 7px;
+  }
+  .bc-viewport {
+    height: 56vh;
+    min-height: 320px;
+  }
+  .bc-toolgroup button {
+    padding: 5px 7px;
+  }
+  .bc-toolgroup button span {
+    font-size: 10px;
+  }
+  .bc-full {
+    inset: 4px;
+  }
+  .bc-full .bc-viewport {
+    min-height: 100px;
+  }
+  .bc-meta {
+    margin-left: 0;
+  }
+  .bc-top button {
+    margin-left: auto;
+  }
+}
+.page3:has(.bc-full) {
+  animation: none;
+  transform: none;
+}
+.bc-full {
+  z-index: 48;
+}
+
+.bc-grid-edit {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid #4b6554;
+  border-radius: 8px;
+  background: #1c342a;
+  flex: none;
+}
+.bc-grid-label {
+  align-self: center;
+  font-size: 12px;
+  color: #e8d8ac;
+  font-weight: 600;
+  margin-right: 6px;
+}
+.bc-grid-edit label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 11px;
+  color: #e7e8d4;
+}
+.bc-grid-edit input {
+  width: 80px;
+  min-height: 34px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+.bc-full .bc-grid-edit {
+  flex: none;
+}

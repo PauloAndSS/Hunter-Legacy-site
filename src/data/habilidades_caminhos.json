@@ -1,0 +1,726 @@
+{
+  "ruleset": "hunter-legacy-3.0.1",
+  "catalog": "habilidades_caminhos",
+  "entries": [
+    {
+      "id": "aprimorador-fisico-fisico-profano",
+      "name": "Físico Profano",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB2",
+      "path": "Aprimorador Físico"
+    },
+    {
+      "id": "aprimorador-fisico-brutalidade-desenfreada",
+      "name": "Brutalidade Desenfreada",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB3",
+      "path": "Aprimorador Físico"
+    },
+    {
+      "id": "aprimorador-fisico-dominio-fisico",
+      "name": "Domínio Físico",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB4",
+      "path": "Aprimorador Físico"
+    },
+    {
+      "id": "aprimorador-fisico-constituicao-perfeita",
+      "name": "Constituição Perfeita",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB5",
+      "path": "Aprimorador Físico"
+    },
+    {
+      "id": "aprimorador-mental-mente-genial",
+      "name": "Mente Genial",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB6",
+      "path": "Aprimorador Mental"
+    },
+    {
+      "id": "aprimorador-mental-acumulo-de-potencial",
+      "name": "Acúmulo de Potencial",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB7",
+      "path": "Aprimorador Mental"
+    },
+    {
+      "id": "aprimorador-mental-dominio-mental",
+      "name": "Domínio Mental",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB8",
+      "path": "Aprimorador Mental"
+    },
+    {
+      "id": "aprimorador-mental-mente-perfeita",
+      "name": "Mente Perfeita",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB9",
+      "path": "Aprimorador Mental"
+    },
+    {
+      "id": "aprimorador-externo-afinidade-sutil",
+      "name": "Afinidade Sutil",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB10",
+      "path": "Aprimorador Externo"
+    },
+    {
+      "id": "aprimorador-externo-aprimoramento-natural",
+      "name": "Aprimoramento Natural",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB11",
+      "path": "Aprimorador Externo"
+    },
+    {
+      "id": "aprimorador-externo-dominio-externo",
+      "name": "Domínio Externo",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB12",
+      "path": "Aprimorador Externo"
+    },
+    {
+      "id": "aprimorador-externo-aprimoramento-aperfeicoado",
+      "name": "Aprimoramento Aperfeiçoado",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB13",
+      "path": "Aprimorador Externo"
+    },
+    {
+      "id": "emissor-de-combate-emissao-eficiente",
+      "name": "Emissão Eficiente",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB14",
+      "path": "Emissor de Combate"
+    },
+    {
+      "id": "emissor-de-combate-emissao-brutal",
+      "name": "Emissão Brutal",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB15",
+      "path": "Emissor de Combate"
+    },
+    {
+      "id": "emissor-de-combate-emissao-inteligente",
+      "name": "Emissão Inteligente",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB16",
+      "path": "Emissor de Combate"
+    },
+    {
+      "id": "emissor-de-combate-brutamontes",
+      "name": "Brutamontes",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB17",
+      "path": "Emissor de Combate"
+    },
+    {
+      "id": "emissor-de-teletransporte-deslocamento-espacial",
+      "name": "Deslocamento Espacial",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB18",
+      "path": "Emissor de Teletransporte"
+    },
+    {
+      "id": "emissor-de-teletransporte-ataque-paralistante",
+      "name": "Ataque Paralistante",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB19",
+      "path": "Emissor de Teletransporte"
+    },
+    {
+      "id": "emissor-de-teletransporte-esquiva-espacial",
+      "name": "Esquiva Espacial",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB20",
+      "path": "Emissor de Teletransporte"
+    },
+    {
+      "id": "emissor-de-teletransporte-dominio-espacial",
+      "name": "Domínio Espacial",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB21",
+      "path": "Emissor de Teletransporte"
+    },
+    {
+      "id": "controlador-batalha-em-equipe",
+      "name": "Batalha em Equipe",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB22",
+      "path": "Controlador"
+    },
+    {
+      "id": "controlador-calculo-perfeito",
+      "name": "Calculo Perfeito",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB23",
+      "path": "Controlador"
+    },
+    {
+      "id": "controlador-horda",
+      "name": "Horda",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB24",
+      "path": "Controlador"
+    },
+    {
+      "id": "controlador-vinculo-inquebravel",
+      "name": "Vinculo Inquebrável",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB25",
+      "path": "Controlador"
+    },
+    {
+      "id": "transmutador-traicoeiro-golpe-traicoeiro",
+      "name": "Golpe Traiçoeiro",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB26",
+      "path": "Transmutador Traiçoeiro"
+    },
+    {
+      "id": "transmutador-traicoeiro-adaptacao-constante",
+      "name": "Adaptação Constante",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB27",
+      "path": "Transmutador Traiçoeiro"
+    },
+    {
+      "id": "transmutador-traicoeiro-concentracao-inabalavel",
+      "name": "Concentração Inabalável",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB28",
+      "path": "Transmutador Traiçoeiro"
+    },
+    {
+      "id": "transmutador-traicoeiro-transformador",
+      "name": "Transformador",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB29",
+      "path": "Transmutador Traiçoeiro"
+    },
+    {
+      "id": "transmutador-elemental-manto-elemental",
+      "name": "Manto Elemental",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB30",
+      "path": "Transmutador Elemental"
+    },
+    {
+      "id": "transmutador-elemental-surto-elemental",
+      "name": "Surto Elemental",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB31",
+      "path": "Transmutador Elemental"
+    },
+    {
+      "id": "transmutador-elemental-concentracao-absoluta",
+      "name": "Concentração Absoluta",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB32",
+      "path": "Transmutador Elemental"
+    },
+    {
+      "id": "transmutador-elemental-elementista",
+      "name": "Elementista",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB33",
+      "path": "Transmutador Elemental"
+    },
+    {
+      "id": "conjurador-de-batalha-implacavel",
+      "name": "Implacável",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB34",
+      "path": "Conjurador de Batalha"
+    },
+    {
+      "id": "conjurador-de-batalha-combatente",
+      "name": "Combatente",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB35",
+      "path": "Conjurador de Batalha"
+    },
+    {
+      "id": "conjurador-de-batalha-surto-de-acao",
+      "name": "Surto de Ação",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB36",
+      "path": "Conjurador de Batalha"
+    },
+    {
+      "id": "conjurador-de-batalha-instinto-de-agressao",
+      "name": "Instinto de Agressão",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB37",
+      "path": "Conjurador de Batalha"
+    },
+    {
+      "id": "conjurador-dimensional-defensivo",
+      "name": "Defensivo",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB38",
+      "path": "Conjurador Dimensional"
+    },
+    {
+      "id": "conjurador-dimensional-oportunista",
+      "name": "Oportunista",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB39",
+      "path": "Conjurador Dimensional"
+    },
+    {
+      "id": "conjurador-dimensional-plano-infalivel",
+      "name": "Plano Infalível",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB40",
+      "path": "Conjurador Dimensional"
+    },
+    {
+      "id": "conjurador-dimensional-dimensao-adaptavel",
+      "name": "Dimensão Adaptável",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB41",
+      "path": "Conjurador Dimensional"
+    },
+    {
+      "id": "conjurador-belico-paranoico",
+      "name": "Paranóico",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB42",
+      "path": "Conjurador Bélico"
+    },
+    {
+      "id": "conjurador-belico-espada-e-escudo",
+      "name": "Espada e Escudo",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB43",
+      "path": "Conjurador Bélico"
+    },
+    {
+      "id": "conjurador-belico-explosao-de-poder",
+      "name": "Explosão de Poder",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB44",
+      "path": "Conjurador Bélico"
+    },
+    {
+      "id": "conjurador-belico-armamento-divino",
+      "name": "Armamento Divino",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB45",
+      "path": "Conjurador Bélico"
+    },
+    {
+      "id": "invocador-batalha-em-equipe",
+      "name": "Batalha em Equipe",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB46",
+      "path": "Invocador"
+    },
+    {
+      "id": "invocador-calculo-perfeito",
+      "name": "Calculo Perfeito",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB47",
+      "path": "Invocador"
+    },
+    {
+      "id": "invocador-horda",
+      "name": "Horda",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB48",
+      "path": "Invocador"
+    },
+    {
+      "id": "invocador-vinculo-inquebravel",
+      "name": "Vinculo Inquebrável",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB49",
+      "path": "Invocador"
+    },
+    {
+      "id": "manipulaodr-belico-arma-unica",
+      "name": "Arma Única",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB51",
+      "path": "Manipulaodr Bélico"
+    },
+    {
+      "id": "manipulaodr-belico-eficiencia-superior",
+      "name": "Eficiência Superior",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB52",
+      "path": "Manipulaodr Bélico"
+    },
+    {
+      "id": "manipulaodr-belico-acao-rapida",
+      "name": "Ação Rápida",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB53",
+      "path": "Manipulaodr Bélico"
+    },
+    {
+      "id": "manipulaodr-belico-estilo-letal",
+      "name": "Estilo Letal",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB54",
+      "path": "Manipulaodr Bélico"
+    },
+    {
+      "id": "manipulador-fisico-corpo-forjado",
+      "name": "Corpo Forjado",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB55",
+      "path": "Manipulador Físico"
+    },
+    {
+      "id": "manipulador-fisico-ativacao-veloz",
+      "name": "Ativação Veloz",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB56",
+      "path": "Manipulador Físico"
+    },
+    {
+      "id": "manipulador-fisico-acao-rapida",
+      "name": "Ação Rápida",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB57",
+      "path": "Manipulador Físico"
+    },
+    {
+      "id": "manipulador-fisico-sincronia-perfeita",
+      "name": "Sincronia Perfeita",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB58",
+      "path": "Manipulador Físico"
+    },
+    {
+      "id": "manipulador-restrito-ativacao-impecavel",
+      "name": "Ativação Impecável",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB59",
+      "path": "Manipulador Restrito"
+    },
+    {
+      "id": "manipulador-restrito-manipulacao-defensiva",
+      "name": "Manipulação Defensiva",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB60",
+      "path": "Manipulador Restrito"
+    },
+    {
+      "id": "manipulador-restrito-acao-rapida",
+      "name": "Ação Rápida",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB61",
+      "path": "Manipulador Restrito"
+    },
+    {
+      "id": "manipulador-restrito-dificuldade-crescente",
+      "name": "Dificuldade Crescente",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB62",
+      "path": "Manipulador Restrito"
+    },
+    {
+      "id": "marionetista-batalha-em-equipe",
+      "name": "Batalha em Equipe",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB63",
+      "path": "Marionetista"
+    },
+    {
+      "id": "marionetista-calculo-perfeito",
+      "name": "Calculo Perfeito",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB64",
+      "path": "Marionetista"
+    },
+    {
+      "id": "marionetista-horda",
+      "name": "Horda",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB65",
+      "path": "Marionetista"
+    },
+    {
+      "id": "marionetista-vinculo-inquebravel",
+      "name": "Vinculo Inquebrável",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB66",
+      "path": "Marionetista"
+    },
+    {
+      "id": "especialista-adaptativo-superdotado",
+      "name": "Superdotado",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB67",
+      "path": "Especialista Adaptativo"
+    },
+    {
+      "id": "especialista-adaptativo-talento-genial",
+      "name": "Talento Genial",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB68",
+      "path": "Especialista Adaptativo"
+    },
+    {
+      "id": "especialista-adaptativo-movimento-empoderado",
+      "name": "Movimento empoderado",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB69",
+      "path": "Especialista Adaptativo"
+    },
+    {
+      "id": "especialista-adaptativo-adaptacao-superior",
+      "name": "Adaptação Superior",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB70",
+      "path": "Especialista Adaptativo"
+    },
+    {
+      "id": "colecionador-caminho-limitado",
+      "name": "Caminho Limitado",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB71",
+      "path": "Colecionador"
+    },
+    {
+      "id": "colecionador-ativacao-refinada",
+      "name": "Ativação Refinada",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB72",
+      "path": "Colecionador"
+    },
+    {
+      "id": "colecionador-maestria-fluida",
+      "name": "Maestria Fluida",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB73",
+      "path": "Colecionador"
+    },
+    {
+      "id": "colecionador-colecionador-de-post-mortem",
+      "name": "Colecionador de Post Mortem",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!AB74",
+      "path": "Colecionador"
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "ruleset": "hunter-legacy-3.0.1",
+  "catalog": "habilidades_basicas",
+  "entries": [
+    {
+      "id": "almejando-alto",
+      "name": "Almejando Alto",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "bom-de-improviso",
+      "name": "Bom de Improviso",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "reflexo-afiado",
+      "name": "Reflexo Afiado",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "concentracao-inabalavel",
+      "name": "Concentração Inabalável",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "corrida-desenfreada",
+      "name": "Corrida Desenfreada",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "espirito-marcial",
+      "name": "Espírito Marcial",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "iniciacao-em-nen",
+      "name": "Iniciação em Nen",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "perito-em-fugas",
+      "name": "Perito em Fugas",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "homem-de-aco",
+      "name": "Homem de Aço",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "mudanca-de-alinhamento",
+      "name": "Mudança de Alinhamento",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "poco-de-estamina",
+      "name": "Poço de Estamina",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "primeiros-socorros",
+      "name": "Primeiros Socorros",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "pronto-para-a-batalha",
+      "name": "Pronto para a Batalha",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "sortudo",
+      "name": "Sortudo",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "superioridade-absoluta",
+      "name": "Superioridade Absoluta",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "liberacao-de-aura",
+      "name": "Liberação de Aura",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "base-solida",
+      "name": "Base Sólida",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "superando-limites",
+      "name": "Superando Limites",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "corpo-inquebravel",
+      "name": "Corpo Inquebrável",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "prodigio",
+      "name": "Prodígio",
+      "source": "Livro do Jogador",
+      "page": "28–32",
+      "status": "catalogado",
+      "automation": "manual"
+    }
+  ]
+}

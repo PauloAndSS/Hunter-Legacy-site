@@ -1,0 +1,110 @@
+{
+  "ruleset": "hunter-legacy-3.0.1",
+  "catalog": "classes_hunter",
+  "entries": [
+    {
+      "id": "hunter-arqueologo",
+      "name": "Hunter Arqueólogo",
+      "source": "Livro do Jogador",
+      "page": "150–164",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "hunter-botanico",
+      "name": "Hunter Botânico",
+      "source": "Livro do Jogador",
+      "page": "150–164",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "hunter-caca-talentos",
+      "name": "Hunter Caça Talentos",
+      "source": "Livro do Jogador",
+      "page": "150–164",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "hunter-criminal",
+      "name": "Hunter Criminal",
+      "source": "Livro do Jogador",
+      "page": "150–164",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "hunter-gourmet",
+      "name": "Hunter Gourmet",
+      "source": "Livro do Jogador",
+      "page": "150–164",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "hunter-jackpot",
+      "name": "Hunter Jackpot",
+      "source": "Livro do Jogador",
+      "page": "150–164",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "hunter-lista-negra",
+      "name": "Hunter Lista Negra",
+      "source": "Livro do Jogador",
+      "page": "150–164",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "hunter-maritimo",
+      "name": "Hunter Marítimo",
+      "source": "Livro do Jogador",
+      "page": "150–164",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "hunter-medico",
+      "name": "Hunter Médico",
+      "source": "Livro do Jogador",
+      "page": "150–164",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "hunter-musical",
+      "name": "Hunter Musical",
+      "source": "Livro do Jogador",
+      "page": "150–164",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "hunter-selvagem",
+      "name": "Hunter Selvagem",
+      "source": "Livro do Jogador",
+      "page": "150–164",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "hunter-tecnico",
+      "name": "Hunter Técnico",
+      "source": "Livro do Jogador",
+      "page": "150–164",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "hunter-toxico",
+      "name": "Hunter Tóxico",
+      "source": "Livro do Jogador",
+      "page": "150–164",
+      "status": "catalogado",
+      "automation": "manual"
+    }
+  ]
+}

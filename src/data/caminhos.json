@@ -1,0 +1,159 @@
+{
+  "ruleset": "hunter-legacy-3.0.1",
+  "catalog": "caminhos",
+  "entries": [
+    {
+      "id": "aprimorador-fisico",
+      "name": "Aprimorador Físico",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!Z2"
+    },
+    {
+      "id": "aprimorador-mental",
+      "name": "Aprimorador Mental",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!Z3"
+    },
+    {
+      "id": "aprimorador-externo",
+      "name": "Aprimorador Externo",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!Z4"
+    },
+    {
+      "id": "transmutador-traicoeiro",
+      "name": "Transmutador Traiçoeiro",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!Z5"
+    },
+    {
+      "id": "transmutador-elemental",
+      "name": "Transmutador Elemental",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!Z6"
+    },
+    {
+      "id": "emissor-de-combate",
+      "name": "Emissor de Combate",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!Z7"
+    },
+    {
+      "id": "emissor-de-teletransporte",
+      "name": "Emissor de Teletransporte",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!Z8"
+    },
+    {
+      "id": "controlador",
+      "name": "Controlador",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!Z9"
+    },
+    {
+      "id": "conjurador-de-batalha",
+      "name": "Conjurador de Batalha",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!Z10"
+    },
+    {
+      "id": "conjurador-dimensional",
+      "name": "Conjurador Dimensional",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!Z11"
+    },
+    {
+      "id": "conjurador-belico",
+      "name": "Conjurador Bélico",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!Z12"
+    },
+    {
+      "id": "manipulador-belico",
+      "name": "Manipulador Bélico",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!Z13"
+    },
+    {
+      "id": "manipulador-fisico",
+      "name": "Manipulador Físico",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!Z14"
+    },
+    {
+      "id": "manipulador-restrito",
+      "name": "Manipulador Restrito",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!Z15"
+    },
+    {
+      "id": "marionestista",
+      "name": "Marionestista",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!Z16"
+    },
+    {
+      "id": "especialista-adaptativo",
+      "name": "Especialista Adaptativo",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!Z17"
+    },
+    {
+      "id": "colecionador",
+      "name": "Colecionador",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual",
+      "cell": "REF!Z18"
+    }
+  ]
+}

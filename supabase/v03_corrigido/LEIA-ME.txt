@@ -1,0 +1,7 @@
+Execute os três arquivos na ordem 01, 02 e 03 no SQL Editor do Supabase.
+Use uma nova consulta por arquivo, sem selecionar apenas parte do código.
+Se o editor oferecer adicionar RLS automaticamente, não acrescente esse SQL: as políticas já são definidas na migração.
+Cada etapa tem sua própria transação. Se uma falhar, pare e envie a mensagem completa; não avance para a próxima.
+Se a etapa anterior da migração falhou, é possível executar novamente estas etapas.
+A etapa 03 deve retornar perfil_leitura=true, rolagem_ficha=true, combate_escrita_direta=false.
+Verificação local: delimitadores pareados; SQL não executado contra um servidor PostgreSQL neste ambiente.

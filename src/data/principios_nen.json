@@ -1,0 +1,78 @@
+{
+  "ruleset": "hunter-legacy-3.0.1",
+  "catalog": "principios_nen",
+  "entries": [
+    {
+      "id": "ten",
+      "name": "Ten",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "zetsu",
+      "name": "Zetsu",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "ren",
+      "name": "Ren",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "hatsu",
+      "name": "Hatsu",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "gyo",
+      "name": "Gyo",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "shu",
+      "name": "Shu",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "in",
+      "name": "In",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "en",
+      "name": "En",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "ryu",
+      "name": "Ryu",
+      "source": "Ficha XLSX",
+      "page": null,
+      "status": "catalogado",
+      "automation": "manual"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "ruleset": "hunter-legacy-3.0.1",
+  "catalog": "categorias_nen",
+  "entries": [
+    {
+      "id": "sem-categoria",
+      "name": "Sem Categoria",
+      "source": "Livro do Jogador",
+      "page": "33–59",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "aprimorador",
+      "name": "Aprimorador",
+      "source": "Livro do Jogador",
+      "page": "33–59",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "emissor",
+      "name": "Emissor",
+      "source": "Livro do Jogador",
+      "page": "33–59",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "transmutador",
+      "name": "Transmutador",
+      "source": "Livro do Jogador",
+      "page": "33–59",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "conjurador",
+      "name": "Conjurador",
+      "source": "Livro do Jogador",
+      "page": "33–59",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "manipulador",
+      "name": "Manipulador",
+      "source": "Livro do Jogador",
+      "page": "33–59",
+      "status": "catalogado",
+      "automation": "manual"
+    },
+    {
+      "id": "especialista",
+      "name": "Especialista",
+      "source": "Livro do Jogador",
+      "page": "33–59",
+      "status": "catalogado",
+      "automation": "manual"
+    }
+  ]
+}

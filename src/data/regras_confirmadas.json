@@ -1,0 +1,88 @@
+{
+  "ruleset": "hunter-legacy-3.0.1",
+  "catalog": "regras_confirmadas",
+  "entries": [
+    {
+      "id": "teste-d20",
+      "name": "Teste d20",
+      "source": "Livro do Jogador",
+      "page": 7,
+      "status": "catalogado",
+      "automation": "manual",
+      "dice": "1d20",
+      "target_types": ["CD", "CR"],
+      "automation_candidate": true
+    },
+    {
+      "id": "vantagem-e-desvantagem",
+      "name": "Vantagem e desvantagem",
+      "source": "Livro do Jogador",
+      "page": 8,
+      "status": "catalogado",
+      "automation": "manual",
+      "dice": "2d20",
+      "selection": ["max", "min"],
+      "automation_candidate": true
+    },
+    {
+      "id": "dados-de-aura",
+      "name": "Dados de aura",
+      "source": "Manual Shingen-Ryu",
+      "page": 8,
+      "status": "catalogado",
+      "automation": "manual",
+      "dice": "d4",
+      "dice_per_level": 2,
+      "modifier": "Espírito por dado",
+      "long_rest_recovery": "nível do personagem",
+      "automation_candidate": true
+    },
+    {
+      "id": "tecnica-de-1o-grau",
+      "name": "Técnica de 1º grau",
+      "source": "Manual Shingen-Ryu",
+      "page": 24,
+      "status": "catalogado",
+      "automation": "manual",
+      "minimum_level": 1,
+      "max_pa": 2,
+      "action": "acao_poder",
+      "max_damage_single": "2d10",
+      "max_damage_multi": "2d6",
+      "range_line_m": 9
+    },
+    {
+      "id": "tecnica-auxiliar",
+      "name": "Técnica auxiliar",
+      "source": "Manual Shingen-Ryu",
+      "page": 24,
+      "status": "catalogado",
+      "automation": "manual",
+      "max_pa": 15,
+      "actions": ["acao_bonus", "reacao"],
+      "direct_damage": false
+    },
+    {
+      "id": "metodos-iniciais",
+      "name": "Métodos iniciais",
+      "source": "Livro do Jogador",
+      "page": 63,
+      "status": "catalogado",
+      "automation": "manual",
+      "max_choices": 3
+    },
+    {
+      "id": "economia-de-acoes",
+      "name": "Economia de ações",
+      "source": "Livro do Jogador",
+      "page": "195–196",
+      "status": "catalogado",
+      "automation": "manual",
+      "action": 1,
+      "power_action": 1,
+      "bonus_action_max": 1,
+      "bonus_requires_feature": true,
+      "reaction_refresh": "inicio_proprio_turno"
+    }
+  ]
+}
