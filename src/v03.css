@@ -518,13 +518,6 @@ h3 {
   place-items: center;
   padding: 8px;
 }
-.crop-preview canvas {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 2px solid #9f8851;
-  box-shadow: 0 0 0 6px #d4c49d44;
-}
 .profile-form small {
   color: #677360;
 }

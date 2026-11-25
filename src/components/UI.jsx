@@ -1,17 +1,14 @@
 import React, { useEffect, useRef } from 'react';
+import { isDiscordAvatar } from '../discord';
 export function Avatar({ profile, fallback = '?', size = 40 }) {
   return (
     <span className="avatar3" style={{ width: size, height: size }}>
-      {profile?.avatar_url?.startsWith(
-        import.meta.env.VITE_SUPABASE_URL +
-          '/storage/v1/object/public/avatars/' +
-          profile.id +
-          '/avatar.webp',
-      ) ? (
+      {isDiscordAvatar(profile?.avatar_url) ? (
         <img
           key={profile.avatar_url}
           src={profile.avatar_url}
           alt=""
+          referrerPolicy="no-referrer"
           onError={(e) => {
             e.currentTarget.style.display = 'none';
           }}

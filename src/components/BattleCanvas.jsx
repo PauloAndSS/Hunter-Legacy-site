@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useLayoutEffect, useId } from 'react';
+import { isDiscordAvatar } from '../discord';
 import { conditions } from '../rules';
 import {
   CELL,
@@ -225,12 +226,7 @@ function Token({ v, c, p, active, selected, movable, position, onDown, onOpen, c
     ratio = clamp(hp / max, 0, 1),
     nick = v.characterId ? p?.nickname || c?.name || v.name : v.name;
   const url = p?.avatar_url,
-    allowed = url?.startsWith(
-      import.meta.env.VITE_SUPABASE_URL +
-        '/storage/v1/object/public/avatars/' +
-        p.id +
-        '/avatar.webp',
-    );
+    allowed = isDiscordAvatar(url);
   const name = nick || '?';
   const short = name.length > 16 ? name.slice(0, 15) + '…' : name;
   const npcName = v.name || 'NPC',

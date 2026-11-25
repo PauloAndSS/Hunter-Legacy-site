@@ -973,26 +973,17 @@ footer {
   margin-top: 6px;
   justify-content: space-between;
 }
-.password-field {
-  display: flex;
-  position: relative;
+.auth-form .discord-button {
+  width: 100%;
+  min-height: 48px;
+  justify-content: space-between;
+  background: #4752c4;
+  border-color: #3c45a5;
+  color: #fff;
 }
-.password-field input {
-  padding-right: 78px;
-}
-.password-field .text-button {
-  position: absolute;
-  right: 5px;
-  top: 7px;
-  font-size: 12px;
-}
-.auth-switch {
-  margin-top: 23px;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
-  font-size: 13px;
-  color: #576c5d;
-  text-align: center;
+.auth-form .discord-button:hover:not(:disabled) {
+  background: #3c45a5;
+  border-color: #2f3787;
 }
 .auth-form .notice,
 .auth-form .error {

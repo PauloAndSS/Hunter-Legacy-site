@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { createRoot } from 'react-dom/client';
 import { db, configured, unwrap, rpc } from './db';
 import { asset } from './assets';
+import { discordProfile } from './discord';
 import Auth from './components/Auth';
 import Library from './components/Library';
 import Profile from './components/Profile';
@@ -58,6 +59,7 @@ function App() {
   const mine = characters.filter((c) => c.owner === uid);
   const shared = cid ? characters.filter((c) => c.campaign_id === cid) : [];
   const myProfile = profiles[uid];
+  const discord = discordProfile(session?.user);
   const close = useCallback(() => M(null), []);
   context.current = cid;
   useEffect(() => {
@@ -86,6 +88,30 @@ function App() {
     if (uid && ['#/cadastro', '#/entrar'].includes(location.hash))
       history.replaceState(null, '', location.pathname + location.search);
   }, [uid]);
+  // Cria o perfil no primeiro acesso e mantém a foto igual à do Discord.
+  useEffect(() => {
+    if (!uid || !discord) return;
+    let alive = true;
+    (async () => {
+      try {
+        const current = await unwrap(db.from('profiles').select('*').eq('id', uid).maybeSingle());
+        if (!alive || (current && current.avatar_url === discord.avatar_url)) return;
+        await unwrap(
+          db.from('profiles').upsert({
+            id: uid,
+            nickname: current?.nickname || discord.nickname,
+            avatar_url: discord.avatar_url,
+          }),
+        );
+        if (alive) await refreshRef.current?.();
+      } catch (e) {
+        if (alive) X(e.message);
+      }
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [uid, discord?.avatar_url, discord?.nickname]);
   const animate = useCallback((r) => {
     if (!r) return;
     TO(r);
@@ -933,7 +959,7 @@ function App() {
       </main>
       <footer>
         <span>✦ HUNTER LEGACY · Projeto de fãs</span>
-        <span>v0.3 · {cid ? campaign?.name : 'Área pessoal'}</span>
+        <span>v0.5 · {cid ? campaign?.name : 'Área pessoal'}</span>
       </footer>
       {modal?.type === 'profile' && (
         <Profile

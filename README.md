@@ -1,4 +1,4 @@
-# Hunter Legacy — Mesa RPG (v0.4)
+# Hunter Legacy — Mesa RPG (v0.5)
 
 Mesa virtual para o RPG **Hunter Legacy**: fichas, campanhas, combate em tempo real e biblioteca.
 Feita com React, Vite e Supabase.
@@ -31,7 +31,7 @@ Feita com React, Vite e Supabase.
 | **Combate**    | Tabuleiro, tokens, iniciativa, turnos, ações, reações e condições |
 | **Buscas**     | Mapa, NPCs, artefatos, locais e pistas revelados pelo mestre      |
 | **Biblioteca** | Leitor de PDF em páginas duplas, com zoom e navegação             |
-| **Perfil**     | Nickname e avatar com recorte e compressão automática             |
+| **Perfil**     | Nickname e foto do Discord                                        |
 
 ---
 
@@ -109,17 +109,24 @@ A última consulta deve retornar:
 A migração preserva campanhas e fichas. Contas acima da cota mantêm seus registros, mas só poderão
 criar novos quando ficarem abaixo dela.
 
-### Storage
+### Fotos de perfil
 
-- O bucket `avatars` é **público**, para que os tokens mostrem as fotos. Não use fotos que precisem
-  ser privadas.
-- Só a conta proprietária grava em seu caminho: `<id-do-usuario>/avatar.webp`.
-- Limite de 98.304 bytes, tipo WebP. A foto nova substitui a anterior.
-- Se já houver um bucket de mesmo nome com outra finalidade, revise a migração antes de executá-la.
+As fotos vêm do Discord e não ocupam o Storage. Depois das etapas acima, execute
+`supabase/upgrade_0.5_discord.sql`, que encerra o envio de fotos e limpa as referências antigas.
+
+### Login com o Discord
+
+1. No [Discord Developer Portal](https://discord.com/developers/applications), crie uma aplicação.
+2. Em **OAuth2 → Redirects**, adicione `https://SEU-PROJETO.supabase.co/auth/v1/callback` e salve.
+3. Copie o **Client ID** e o **Client Secret**.
+4. No Supabase, em **Authentication → Sign In / Providers → Discord**, ative o provedor, cole os dois
+   valores e salve. O Client Secret nunca entra no código nem no GitHub.
 
 ### Authentication
 
-- Mantenha **Email** habilitado e o login anônimo **desabilitado**.
+- Mantenha o login anônimo **desabilitado** e **Confirm email habilitado**. O Supabase une contas de
+  mesmo e-mail; sem confirmação, alguém poderia registrar o e-mail de outra pessoa antes dela.
+- O site entra somente pelo Discord.
 - Em **URL Configuration**, configure:
 
   | Campo             | Valor                                                                         |
@@ -182,9 +189,9 @@ protege os dados são as políticas RLS do banco.
 
 ### Perfil
 
-- Clique no avatar ou nickname no cabeçalho, escolha JPG, PNG ou WebP, ajuste zoom e recorte, e
-  salve.
-- O navegador gera um WebP 256×256, com qualidade adaptativa e máximo de 96 KiB.
+- A conta é criada no primeiro acesso com o Discord, com nickname e foto de lá.
+- Para mudar o nickname, clique no avatar no cabeçalho.
+- Para atualizar a foto, troque-a no Discord, saia e entre de novo.
 - Todos os tokens da conta usam essa foto e esse nickname. O nome do personagem continua na ficha e
   na iniciativa.
 
@@ -254,21 +261,22 @@ src/
 ├── rules.js                    Catálogos, fórmulas e normalização da ficha
 ├── db.js                       Cliente Supabase
 ├── assets.js                   Caminhos de arquivos públicos
+├── discord.js                  Nome e foto vindos do Discord
 ├── style.css, v03.css          Estilos
 ├── components/
-│   ├── Auth.jsx                Entrada e cadastro
+│   ├── Auth.jsx                Entrada com o Discord
 │   ├── Sheet.jsx               Ficha, criação, edição e rolagens
 │   ├── Combat.jsx              Combate e iniciativa
 │   ├── BattleCanvas.jsx        Tabuleiro e ferramentas de medida
 │   ├── boardGeometry.js        Geometria do tabuleiro
-│   ├── Profile.jsx             Recorte, compressão e upload
+│   ├── Profile.jsx             Nickname e foto do Discord
 │   ├── Library.jsx             Leitura de PDFs com PDF.js
 │   └── UI.jsx                  Modal, avatar e animação do dado
 └── data/                       Catálogos de regras em JSON
 
 public/      Imagens e livros
 supabase/    Scripts SQL: RLS, Storage, cotas, rolagens e combate
-tests/       Testes de geometria
+tests/       Testes de geometria e perfil
 docs/        Documentação de produto e arquitetura
 ```
 
@@ -286,7 +294,7 @@ docs/        Documentação de produto e arquitetura
 
 ## Testes
 
-`npm test` valida a geometria do tabuleiro.
+`npm test` valida a geometria do tabuleiro e a leitura do perfil do Discord.
 
 ### Roteiro de aceitação (duas contas)
 
@@ -300,8 +308,8 @@ docs/        Documentação de produto e arquitetura
 4. **Combate.** Com dois navegadores, adicione fichas, NPC e criatura. Verifique que o jogador não
    move token alheio nem o próprio fora do turno. Teste ação, reação, PV, condições, régua, círculo e
    cone. Recarregue, reentre e confira o estado persistido.
-5. **Avatar.** Envie com recorte e substitua. Confirme que há um único objeto no Storage e que o novo
-   avatar aparece nas fichas e tokens. Teste o nickname.
+5. **Discord.** Entre com o Discord e confira a foto no cabeçalho, nas fichas e nos tokens. Troque a
+   foto no Discord, reentre e confira. Teste o nickname.
 6. **Biblioteca.** Abra cada PDF, navegue, vá a uma página e use o zoom. Teste o PDF original caso o
    navegador não renderize o livro.
 7. **Privacidade.** Rolagem privada, nota privada e registros ocultos não podem ser lidos por outro
