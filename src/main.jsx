@@ -959,6 +959,10 @@ function App() {
       </main>
       <footer>
         <span>✦ HUNTER LEGACY · Projeto de fãs</span>
+        <span>
+          <a href={asset('termos.html')}>Termos</a> ·{' '}
+          <a href={asset('privacidade.html')}>Privacidade</a>
+        </span>
         <span>v0.5 · {cid ? campaign?.name : 'Área pessoal'}</span>
       </footer>
       {modal?.type === 'profile' && (

@@ -64,6 +64,10 @@ export default function Auth() {
               {message}
             </div>
           )}
+          <p className="auth-legal">
+            Ao entrar, você concorda com os <a href={asset('termos.html')}>termos de serviço</a> e a{' '}
+            <a href={asset('privacidade.html')}>política de privacidade</a>.
+          </p>
         </div>
       </section>
     </main>

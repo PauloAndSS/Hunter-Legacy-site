@@ -985,6 +985,13 @@ footer {
   background: #3c45a5;
   border-color: #2f3787;
 }
+.auth-form .auth-legal {
+  margin: 20px 0 0;
+  font-size: 12px;
+}
+footer a {
+  color: inherit;
+}
 .auth-form .notice,
 .auth-form .error {
   font-size: 13px;

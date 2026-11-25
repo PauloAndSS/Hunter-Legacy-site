@@ -282,6 +282,8 @@ docs/        Documentação de produto e arquitetura
 
 ### Documentação
 
+- [Termos de serviço](https://pauloandss.github.io/Hunter-Legacy-site/termos.html)
+- [Política de privacidade](https://pauloandss.github.io/Hunter-Legacy-site/privacidade.html)
 - [Produto e requisitos](docs/01-produto.md)
 - [Arquitetura](docs/02-arquitetura.md)
 - [Banco e segurança](docs/03-banco-supabase.md)
