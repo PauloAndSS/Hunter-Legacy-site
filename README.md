@@ -1,4 +1,4 @@
-# Hunter Legacy — Mesa RPG (v0.5)
+# Hunter Legacy — Mesa RPG (v0.6)
 
 Mesa virtual para o RPG **Hunter Legacy**: fichas, campanhas, combate em tempo real e biblioteca.
 Feita com React, Vite e Supabase.
@@ -27,7 +27,7 @@ Feita com React, Vite e Supabase.
 | Área           | O que oferece                                                     |
 | -------------- | ----------------------------------------------------------------- |
 | **Campanhas**  | Até 2 campanhas próprias; participação por convite não conta      |
-| **Fichas**     | Até 5 por usuário, com rolagens, edição e vínculo a uma campanha  |
+| **Fichas**     | Até 5 por usuário, com rolagens, edição e cópia para campanhas    |
 | **Combate**    | Tabuleiro, tokens, iniciativa, turnos, ações, reações e condições |
 | **Buscas**     | Mapa, NPCs, artefatos, locais e pistas revelados pelo mestre      |
 | **Biblioteca** | Leitor de PDF em páginas duplas, com zoom e navegação             |
@@ -114,6 +114,11 @@ criar novos quando ficarem abaixo dela.
 As fotos vêm do Discord e não ocupam o Storage. Depois das etapas acima, execute
 `supabase/upgrade_0.5_discord.sql`, que encerra o envio de fotos e limpa as referências antigas.
 
+### Fichas de campanha
+
+Em seguida, execute `supabase/upgrade_0.6_fichas.sql`. Ele separa a ficha da campanha da ficha pessoal
+e permite que o mestre edite a da campanha. Nenhuma ficha é apagada.
+
 ### Login com o Discord
 
 1. No [Discord Developer Portal](https://discord.com/developers/applications), crie uma aplicação.
@@ -174,11 +179,15 @@ protege os dados são as políticas RLS do banco.
 
 ### Fichas
 
-- Até 5 por usuário no total, compartilhadas ou não.
-- A ficha é pessoal e permanece na biblioteca mesmo se exportada.
-- **Para compartilhar:** abra a ficha → **Compartilhar ficha** → escolha a campanha → **Exportar**.
-  É um vínculo, não uma cópia; cada ficha pertence a uma campanha por vez.
-- Remova o token do combate antes de desvincular ou excluir. Edições são bloqueadas durante combate
+- Até 5 fichas pessoais por usuário e até 5 por jogador em cada campanha.
+- Exportar cria uma **cópia** na campanha. A ficha pessoal continua salva e não muda.
+- **Para exportar:** abra a ficha pessoal → **Exportar para campanha**. Cada ficha pode ir para várias
+  campanhas, uma vez em cada.
+- Na campanha, **o dono e o mestre** editam a cópia. Se os dois editarem ao mesmo tempo, o segundo a
+  salvar é avisado e nada é sobrescrito.
+- Só o dono pode remover a ficha da campanha.
+- Se a campanha for excluída, as cópias viram fichas pessoais, mesmo acima do limite de 5.
+- Remova o token do combate antes de remover a ficha da campanha. Edições são bloqueadas durante combate
   ativo na campanha vinculada.
 - A ficha abre em leitura com rolagens; a edição é explícita.
 - **Conteúdo:** PV, PVE e PA atuais e máximos, resistência, nível, seis atributos, perícias,

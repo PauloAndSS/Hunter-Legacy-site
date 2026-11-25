@@ -15,6 +15,7 @@ export default function Sheet({
   character,
   profile,
   canEdit,
+  isOwner = false,
   isNew,
   onClose,
   onSave,
@@ -22,6 +23,7 @@ export default function Sheet({
   onShare,
   onDelete,
   campaigns,
+  exportedTo = [],
   drawer = false,
   token,
   busy = false,
@@ -33,7 +35,8 @@ export default function Sheet({
     [draft, D] = useState(() => ({ ...normalize(character.sheet), name: character.name || '' })),
     [tab, T] = useState('Resumo'),
     [kind, K] = useState('action'),
-    [share, S] = useState(character.campaign_id || ''),
+    [share, S] = useState(''),
+    [baseRevision, BR] = useState(character.revision),
     [err, ER] = useState('');
   const s = editing ? draft : normalize(character.sheet);
   const set = (key, value) => D((old) => ({ ...old, [key]: value }));
@@ -76,7 +79,7 @@ export default function Sheet({
       if (!draft.name.trim()) throw Error('Informe o nome.');
       for (const k of ['pv', 'pve', 'pa'])
         if (draft[k] > draft[k + 'Max']) throw Error('O valor atual não pode exceder o máximo.');
-      await onSave(draft, character);
+      await onSave(draft, character, baseRevision);
       E(false);
     } catch (e) {
       ER(e.message);
@@ -291,9 +294,11 @@ export default function Sheet({
           <>
             <div className="sheet-actions row">
               <span className="muted">Modo leitura · Clique em um valor para rolar</span>
-              {canEdit && !drawer && (
+              {canEdit && (
                 <button
                   onClick={() => {
+                    ER('');
+                    BR(character.revision);
                     D({ ...normalize(character.sheet), name: character.name });
                     E(true);
                   }}
@@ -418,29 +423,64 @@ export default function Sheet({
                       <b>{v || 'Não definido'}</b>
                     </div>
                   ))}
-                  {canEdit && !drawer && (
+                  {character.campaign_id && (isOwner || canEdit) && (
+                    <p className="muted">
+                      Ficha da campanha: o dono e o mestre podem editar quando o combate está
+                      pausado.
+                    </p>
+                  )}
+                  {isOwner && canEdit && !drawer && (
                     <div className="stack share-sheet">
-                      <h3>Compartilhar ficha</h3>
-                      <label>
-                        Campanha
-                        <select value={share} onChange={(e) => S(e.target.value)}>
-                          <option value="">Somente pessoal</option>
-                          {campaigns.map((c) => (
-                            <option key={c.id} value={c.id}>
-                              {c.name}
-                            </option>
-                          ))}
-                        </select>
-                      </label>
+                      {character.campaign_id ? (
+                        <small>
+                          Esta é a cópia da campanha. Editar aqui não altera a sua ficha pessoal.
+                        </small>
+                      ) : (
+                        <>
+                          <h3>Exportar para campanha</h3>
+                          {exportedTo.length > 0 && (
+                            <small>
+                              Já está em:{' '}
+                              {campaigns
+                                .filter((c) => exportedTo.includes(c.id))
+                                .map((c) => c.name)
+                                .join(', ')}
+                            </small>
+                          )}
+                          <label>
+                            Campanha
+                            <select value={share} onChange={(e) => S(e.target.value)}>
+                              <option value="">Selecione</option>
+                              {campaigns
+                                .filter((c) => !exportedTo.includes(c.id))
+                                .map((c) => (
+                                  <option key={c.id} value={c.id}>
+                                    {c.name}
+                                  </option>
+                                ))}
+                            </select>
+                          </label>
+                          <button
+                            disabled={busy || !share}
+                            onClick={() => {
+                              onShare(character, share);
+                              S('');
+                            }}
+                          >
+                            Exportar para campanha
+                          </button>
+                          <small>
+                            A campanha recebe uma cópia, que você e o mestre podem editar. Esta
+                            ficha pessoal continua salva.
+                          </small>
+                        </>
+                      )}
                       <button
-                        disabled={busy || share === (character.campaign_id || '')}
-                        onClick={() => onShare(character, share)}
+                        className="danger"
+                        disabled={busy}
+                        onClick={() => onDelete(character)}
                       >
-                        {share ? 'Exportar para campanha' : 'Desvincular da campanha'}
-                      </button>
-                      <small>A ficha continua na sua biblioteca pessoal.</small>
-                      <button className="danger" onClick={() => onDelete(character)}>
-                        Excluir ficha
+                        {character.campaign_id ? 'Remover da campanha' : 'Excluir ficha'}
                       </button>
                     </div>
                   )}

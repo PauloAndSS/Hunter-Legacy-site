@@ -57,6 +57,9 @@ function App() {
   const campaign = campaigns.find((c) => c.id === cid);
   const gm = !!uid && campaign?.owner === uid;
   const mine = characters.filter((c) => c.owner === uid);
+  // A exportação cria uma cópia na campanha; a ficha pessoal fica sem campanha.
+  const personal = mine.filter((c) => !c.campaign_id);
+  const exported = mine.filter((c) => c.campaign_id);
   const shared = cid ? characters.filter((c) => c.campaign_id === cid) : [];
   const myProfile = profiles[uid];
   const discord = discordProfile(session?.user);
@@ -276,8 +279,8 @@ function App() {
       });
     });
   const createSheet = () => {
-    if (mine.length >= 5) {
-      X('Limite de 5 fichas atingido.');
+    if (personal.length >= 5) {
+      X('Limite de 5 fichas pessoais atingido.');
       return;
     }
     M({ type: 'sheet', id: 'new' });
@@ -304,23 +307,28 @@ function App() {
               : battle.state.turn === sheetTokenIndex),
         )
       : [];
-  const saveSheet = (draft, c) =>
+  const saveSheet = (draft, c, revision) =>
     safe(
       async () => {
         const { name, ...sheet } = draft;
         const payload = { name: name.trim(), sheet };
         if (c.id === 'new') {
-          const row = await unwrap(
-            db
-              .from('characters')
-              .insert({ ...payload, campaign_id: null })
-              .select('id')
-              .single(),
-          );
+          const row = await unwrap(db.from('characters').insert(payload).select('id').single());
           M({ type: 'sheet', id: row.id });
           N('Ficha salva na biblioteca pessoal.');
         } else {
-          await unwrap(db.from('characters').update(payload).eq('id', c.id));
+          const rows = await unwrap(
+            db
+              .from('characters')
+              .update(payload)
+              .eq('id', c.id)
+              .eq('revision', revision)
+              .select('id'),
+          );
+          if (!rows.length)
+            throw Error(
+              'Outra pessoa alterou esta ficha enquanto você editava. Copie o que mudou, cancele e edite de novo.',
+            );
           N('Ficha atualizada.');
         }
       },
@@ -328,20 +336,20 @@ function App() {
     );
   const shareSheet = (c, id) =>
     safe(async () => {
-      await unwrap(
-        db
-          .from('characters')
-          .update({ campaign_id: id || null })
-          .eq('id', c.id),
-      );
-      N(id ? 'Ficha compartilhada com a campanha.' : 'Ficha desvinculada.');
+      await rpc('export_sheet', { p_character: c.id, p_campaign: id });
+      N('Cópia enviada para a campanha. A ficha pessoal continua salva.');
     });
   const deleteSheet = (c) => {
-    if (confirm('Excluir definitivamente esta ficha?'))
+    const question = !c.campaign_id
+      ? 'Excluir definitivamente esta ficha pessoal? As cópias em campanhas serão mantidas.'
+      : personal.some((p) => p.id === c.source_id)
+        ? 'Remover esta ficha da campanha? O que foi alterado nela será perdido. A ficha pessoal continua salva.'
+        : 'Remover esta ficha da campanha? A ficha pessoal original não existe mais; tudo será perdido.';
+    if (confirm(question))
       safe(async () => {
         await unwrap(db.from('characters').delete().eq('id', c.id));
         M(null);
-        N('Ficha excluída.');
+        N(c.campaign_id ? 'Ficha removida da campanha.' : 'Ficha excluída.');
       });
   };
   function sheetRoll(c, mode, key, kind) {
@@ -697,7 +705,7 @@ function App() {
                     Campanhas criadas <b>{owned}/2</b>
                   </span>
                   <span>
-                    Fichas pessoais <b>{mine.length}/5</b>
+                    Fichas pessoais <b>{personal.length}/5</b>
                   </span>
                 </div>
               </section>
@@ -814,10 +822,10 @@ function App() {
                   <span className="eyebrow">REGISTROS DE PERSONAGEM</span>
                   <h1>{cid ? 'Equipe e fichas' : 'Minhas fichas'}</h1>
                   <p className="muted">
-                    Clique para abrir em modo leitura. {mine.length}/5 fichas salvas.
+                    Clique para abrir em modo leitura. {personal.length}/5 fichas pessoais salvas.
                   </p>
                 </div>
-                <button className="primary" disabled={mine.length >= 5} onClick={createSheet}>
+                <button className="primary" disabled={personal.length >= 5} onClick={createSheet}>
                   + Nova ficha
                 </button>
               </div>
@@ -828,19 +836,23 @@ function App() {
                   {!shared.length && <Empty title="Nenhum personagem na campanha" />}
                   <h2>Minha biblioteca pessoal</h2>
                   <p className="muted">
-                    Abra uma ficha e escolha a campanha em “Compartilhar ficha”.
+                    Abra uma ficha e use “Exportar para campanha”. A pessoal continua salva aqui.
                   </p>
                 </>
               )}
-              <div className="hunter-grid">
-                {(cid ? mine.filter((c) => c.campaign_id !== cid) : mine).map(card)}
-              </div>
-              {!mine.length && (
+              <div className="hunter-grid">{personal.map(card)}</div>
+              {!personal.length && (
                 <Empty title="Nenhuma ficha pessoal">
                   <button className="primary" onClick={createSheet}>
                     Criar primeira ficha
                   </button>
                 </Empty>
+              )}
+              {!cid && exported.length > 0 && (
+                <>
+                  <h2>Minhas fichas em campanhas</h2>
+                  <div className="hunter-grid">{exported.map(card)}</div>
+                </>
               )}
             </section>
           )}
@@ -963,7 +975,7 @@ function App() {
           <a href={asset('termos.html')}>Termos</a> ·{' '}
           <a href={asset('privacidade.html')}>Privacidade</a>
         </span>
-        <span>v0.5 · {cid ? campaign?.name : 'Área pessoal'}</span>
+        <span>v0.6 · {cid ? campaign?.name : 'Área pessoal'}</span>
       </footer>
       {modal?.type === 'profile' && (
         <Profile
@@ -979,9 +991,13 @@ function App() {
           character={selectedChar}
           profile={profiles[selectedChar.owner]}
           canEdit={
-            selectedChar.owner === uid &&
-            !(selectedChar.campaign_id === cid && battle?.state?.active)
+            (selectedChar.owner === uid || (!!gm && selectedChar.campaign_id === cid)) &&
+            !sheetCombat
           }
+          isOwner={selectedChar.owner === uid}
+          exportedTo={exported
+            .filter((c) => c.source_id === selectedChar.id)
+            .map((c) => c.campaign_id)}
           isNew={selectedChar.id === 'new'}
           onClose={close}
           onSave={saveSheet}
