@@ -975,7 +975,7 @@ function App() {
           <a href={asset('termos.html')}>Termos</a> ·{' '}
           <a href={asset('privacidade.html')}>Privacidade</a>
         </span>
-        <span>v0.6 · {cid ? campaign?.name : 'Área pessoal'}</span>
+        <span>v0.6.1 · {cid ? campaign?.name : 'Área pessoal'}</span>
       </footer>
       {modal?.type === 'profile' && (
         <Profile
@@ -990,10 +990,7 @@ function App() {
           key={selectedChar.id + String(modal.drawer)}
           character={selectedChar}
           profile={profiles[selectedChar.owner]}
-          canEdit={
-            (selectedChar.owner === uid || (!!gm && selectedChar.campaign_id === cid)) &&
-            !sheetCombat
-          }
+          canEdit={selectedChar.owner === uid || (!!gm && selectedChar.campaign_id === cid)}
           isOwner={selectedChar.owner === uid}
           exportedTo={exported
             .filter((c) => c.source_id === selectedChar.id)

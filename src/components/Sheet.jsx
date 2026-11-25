@@ -425,8 +425,8 @@ export default function Sheet({
                   ))}
                   {character.campaign_id && (isOwner || canEdit) && (
                     <p className="muted">
-                      Ficha da campanha: o dono e o mestre podem editar quando o combate está
-                      pausado.
+                      Ficha da campanha: o dono e o mestre podem editar. PV e condições do combate
+                      ficam no token.
                     </p>
                   )}
                   {isOwner && canEdit && !drawer && (

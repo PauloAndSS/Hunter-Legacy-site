@@ -117,7 +117,8 @@ As fotos vêm do Discord e não ocupam o Storage. Depois das etapas acima, execu
 ### Fichas de campanha
 
 Em seguida, execute `supabase/upgrade_0.6_fichas.sql`. Ele separa a ficha da campanha da ficha pessoal
-e permite que o mestre edite a da campanha. Nenhuma ficha é apagada.
+e permite que o mestre edite a da campanha. Nenhuma ficha é apagada. Por fim, execute
+`supabase/upgrade_0.6.1_edicao_combate.sql`, que libera a edição durante o combate.
 
 ### Login com o Discord
 
@@ -187,8 +188,8 @@ protege os dados são as políticas RLS do banco.
   salvar é avisado e nada é sobrescrito.
 - Só o dono pode remover a ficha da campanha.
 - Se a campanha for excluída, as cópias viram fichas pessoais, mesmo acima do limite de 5.
-- Remova o token do combate antes de remover a ficha da campanha. Edições são bloqueadas durante combate
-  ativo na campanha vinculada.
+- Remova o token do combate antes de remover a ficha da campanha. Ela pode ser
+  editada durante o combate; PV e condições do encontro continuam no token.
 - A ficha abre em leitura com rolagens; a edição é explícita.
 - **Conteúdo:** PV, PVE e PA atuais e máximos, resistência, nível, seis atributos, perícias,
   salvaguardas, técnicas e notas.
